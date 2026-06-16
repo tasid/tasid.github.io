@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T20:08:17.473Z",
+  "updated": "2026-06-16T23:29:16.048Z",
   "results": {
     "1": {
       "h": 2,
@@ -80,6 +80,11 @@
       "h": 2,
       "a": 2,
       "status": "FT"
+    },
+    "17": {
+      "h": 3,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -93,6 +98,12 @@
     {
       "name": "Folarin Balogun",
       "team": "USA",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Kylian Mbappé",
+      "team": "France",
       "goals": 2,
       "pens": 0
     },
@@ -129,6 +140,12 @@
     {
       "name": "Boualem Khoukhi",
       "team": "Qatar",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Bradley Barcola",
+      "team": "France",
       "goals": 1,
       "pens": 0
     },
@@ -183,6 +200,12 @@
     {
       "name": "Hwang In-Beom",
       "team": "South Korea",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ibrahim Mbaye",
+      "team": "Senegal",
       "goals": 1,
       "pens": 0
     },
