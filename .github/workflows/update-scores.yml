@@ -1,18 +1,14 @@
 name: Update scores
 
-# When this runs (cron is in UTC; during the tournament Central = CDT = UTC-5):
-#   Games kick off on the hour/half-hour and last ~2h15m, so they FINISH on the
-#   :15 and :45 marks. These schedules fire at :20 and :50 — about 5 minutes after
-#   each finish — across the whole daily match window (finishes span 18:15 UTC /
-#   1:15 PM CT through 06:15 UTC / 1:15 AM CT), plus a morning catch-up because the
-#   data source (openfootball) is community-curated and a result can land late.
-#   Runs that find no score change make no commit, so the extra runs are cheap.
+# When this runs (cron is in UTC):
+#   Every 15 minutes, around the clock. Runs that find no score change make no
+#   commit, so the extra runs are cheap. Note: GitHub schedules cron on a
+#   best-effort basis and may delay or skip individual runs, especially at common
+#   marks like :00/:15/:30/:45 — so treat "every 15 min" as a target, not a guarantee.
 #   You can also trigger it anytime via the "Run workflow" button (workflow_dispatch).
 on:
   schedule:
-    - cron: "*/15 18-23 * * *"   # ~5 min after afternoon/early-evening finishes (1:20 PM – 6:50 PM CT)
-    - cron: "*/15 0-6 * * *"     # ~5 min after late finishes (7:20 PM – 1:50 AM CT)
-    - cron: "0 13 * * *"          # 8:00 AM CT — catch any results curated overnight
+    - cron: "*/15 * * * *"   # every 15 minutes, all day
   workflow_dispatch:
 
 # Allow the job to push the updated results.json back to the repo.
