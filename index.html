@@ -148,6 +148,8 @@
   .placeholder{color:var(--muted);font-weight:600;font-size:14px}
   .sub{margin-top:3px;font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px}
   .venue{display:inline-flex;gap:5px;align-items:center}
+  .tv{display:inline-flex;gap:4px;align-items:center;white-space:nowrap}
+  .nn-tv{font-size:12px;color:var(--muted)}
   .right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right}
   .grp{
     font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
@@ -352,6 +354,7 @@
 
   <footer>
     Times convert automatically from the official Eastern Time schedule using your selected zone (daylight saving handled by your browser). Knockout fixtures show bracket slots until teams are confirmed. Built as a standalone page — works offline.<br>
+    US TV per match: FOX or FS1 (English, stream on FOX One) and Telemundo or Universo (Spanish, stream on Peacock).<br>
     Schedule data compiled June 2026. Not affiliated with FIFA.
   </footer>
 </div>
@@ -590,6 +593,15 @@ function winnerSide(m){
 }
 function penHTML(m){ return m.pens ? ` <span class="pens">(${m.pens[0]}–${m.pens[1]} p)</span>` : ""; }
 
+/* ---------- US broadcasters (FOX Sports English, Telemundo/NBC Spanish) ----------
+   Every match airs on FOX or FS1 (English) and Telemundo or Universo (Spanish);
+   streaming is FOX One (Eng) / Peacock (Sp). Default is FOX + Telemundo; the sets
+   below are the exceptions, per FOX's published 70-FOX/34-FS1 split. */
+const FS1_MATCHES = new Set([2,6,7,8,11,12,15,16,20,23,24,27,32,35,36,38,39,40,44,48,50,52,54,55,57,60,62,63,65,68,70,71,82,85]);
+const UNIVERSO_MATCHES = new Set([50,52,54,55,57,60,62,63,65,68,70,71]);
+function broadcast(n){ return { en: FS1_MATCHES.has(n)?"FS1":"FOX", es: UNIVERSO_MATCHES.has(n)?"Universo":"Telemundo" }; }
+function tvHTML(n){ const b=broadcast(n); return `<span class="tv">📺 ${b.en} · ${b.es}</span>`; }
+
 /* ---------- Load live scores from results.json (written nightly by the GitHub Action) ---------- */
 let lastUpdated=null;
 async function loadResults(){
@@ -741,6 +753,7 @@ function render(scrollToToday){
           <div class="teams">${teamHTML(m.t1)} ${centerMid} ${teamHTML(m.t2)}</div>
           <div class="sub">
             <span class="venue">📍 ${m.venue}, ${m.city}</span>
+            ${tvHTML(m.n)}
             <span>Match ${m.n}</span>
           </div>
         </div>
@@ -993,7 +1006,7 @@ function renderBanner(){
     const stage = next.stage==="GROUP" ? "Group "+next.group : STAGE_NAME[next.stage];
     html += `<div class="nn-row"><span class="nn-label">Next · ${stage}</span>`+
             `<span class="nn-match">${next.t1} <span class="vs">v</span> ${next.t2}</span>`+
-            `<span class="nn-when">${when}</span>`+
+            `<span class="nn-when">${when} · ${broadcast(next.n).en}/${broadcast(next.n).es}</span>`+
             `<span class="nn-cd" id="nnCd" data-ts="${next.date.getTime()}">in ${fmtCountdown(next.date.getTime()-now)}</span></div>`;
   }
   nowNextEl.innerHTML=html;
