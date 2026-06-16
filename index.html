@@ -6,6 +6,7 @@
 <title>FIFA World Cup 2026 — Schedule & Standings</title>
 <style>
   :root{
+    /* light (default) */
     --paper:#FBFAF7;
     --surface:#FFFFFF;
     --ink:#18181B;
@@ -15,14 +16,60 @@
     --line-strong:#D8D5CC;
     --grass:#0B6E4F;
     --grass-soft:#E7F2ED;
-    --live:#E4572E;
-    --live-soft:#FCEBE4;
-    --gold:#B58A0E;
+    --live:#E1352B;
+    --live-soft:#FCE7E4;
+    --gold:#C7960B;
+    --gold-soft:#FBF3DC;
+    --paper-blur:rgba(251,250,247,.86);
     --shadow:0 1px 2px rgba(20,20,30,.04), 0 4px 14px rgba(20,20,30,.05);
     --radius:14px;
+    /* vibrant per-section accents */
+    --c-green:#0E9E63;
+    --c-blue:#2563EB;
+    --c-violet:#7C3AED;
+    --c-amber:#E08A00;
+    --accent:var(--c-green);          /* set per view on <body> */
+    --accent-soft:var(--grass-soft);
+    /* WorldCup-vibe multicolour gradient */
+    --wc-grad:linear-gradient(90deg,#0E9E63,#2563EB,#7C3AED,#E1352B,#E08A00);
+    /* 12 group hues */
+    --gA:#E1352B; --gB:#E08A00; --gC:#C7960B; --gD:#0E9E63;
+    --gE:#0EA5A0; --gF:#2563EB; --gG:#4F46E5; --gH:#7C3AED;
+    --gI:#C026A3; --gJ:#DB2777; --gK:#0D9488; --gL:#65A30D;
   }
+  :root[data-theme="medium"]{
+    --paper:#21303A; --surface:#2A3B47; --ink:#EDF3F2; --muted:#AFC2C6;
+    --faint:#7F969C; --line:#384A56; --line-strong:#4A5E6A;
+    --grass:#28C088; --grass-soft:#27413C; --live:#FF7A52; --live-soft:#43332E; --gold:#E7B53C; --gold-soft:#3A3320;
+    --paper-blur:rgba(33,48,58,.9);
+    --shadow:0 1px 2px rgba(0,0,0,.18), 0 6px 18px rgba(0,0,0,.22);
+    --c-green:#2CCB8E; --c-blue:#5B8DEF; --c-violet:#A78BFA; --c-amber:#F2B23C;
+    --accent-soft:#27413C;
+    --wc-grad:linear-gradient(90deg,#2CCB8E,#5B8DEF,#A78BFA,#FF7A52,#F2B23C);
+    --gA:#FF7A52; --gB:#F2B23C; --gC:#E7B53C; --gD:#2CCB8E;
+    --gE:#2DD4BF; --gF:#5B8DEF; --gG:#818CF8; --gH:#A78BFA;
+    --gI:#E879C7; --gJ:#F472B6; --gK:#2DD4BF; --gL:#A3D94B;
+  }
+  :root[data-theme="dark"]{
+    --paper:#0C1311; --surface:#14201B; --ink:#EAF3EE; --muted:#9DB1A7;
+    --faint:#6E837A; --line:#22332C; --line-strong:#314A40;
+    --grass:#34D39A; --grass-soft:#15291F; --live:#FB7050; --live-soft:#3A241E; --gold:#F0C24A; --gold-soft:#2A2417;
+    --paper-blur:rgba(12,19,17,.92);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.45);
+    --c-green:#34D39A; --c-blue:#60A5FA; --c-violet:#B98BFB; --c-amber:#F6B43C;
+    --accent-soft:#15291F;
+    --wc-grad:linear-gradient(90deg,#34D39A,#60A5FA,#B98BFB,#FB7050,#F6B43C);
+    --gA:#FB7050; --gB:#F6B43C; --gC:#F0C24A; --gD:#34D39A;
+    --gE:#2DD4BF; --gF:#60A5FA; --gG:#818CF8; --gH:#B98BFB;
+    --gI:#EC85D0; --gJ:#F472B6; --gK:#2DD4BF; --gL:#A3E635;
+  }
+  body[data-view="schedule"]{ --accent:var(--c-green) }
+  body[data-view="standings"]{ --accent:var(--c-blue) }
+  body[data-view="bracket"]{ --accent:var(--c-violet) }
+  body[data-view="scorers"]{ --accent:var(--c-amber) }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;color-scheme:light}
+  :root[data-theme="medium"], :root[data-theme="dark"]{color-scheme:dark}
   body{
     margin:0;
     background:var(--paper);
@@ -30,14 +77,29 @@
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.45;
     font-variant-numeric:tabular-nums;
+    transition:background-color .25s ease, color .25s ease;
   }
+  .match,.gcard,.bmatch,.tcard,.controls,.nownext,.viewtabs,select,input[type=search],.chip{
+    transition:background-color .25s ease, border-color .25s ease, color .25s ease;
+  }
+  /* WorldCup vibe + theme switcher */
+  .topbar-grad{position:fixed;top:0;left:0;right:0;height:4px;background:var(--wc-grad);z-index:60}
+  .theme-switch{position:fixed;top:11px;right:11px;z-index:61;display:inline-flex;gap:2px;
+    background:var(--surface);border:1px solid var(--line-strong);border-radius:999px;padding:3px;
+    box-shadow:var(--shadow)}
+  .theme-switch button{font:inherit;font-size:11px;font-weight:700;color:var(--muted);
+    background:none;border:none;border-radius:999px;padding:5px 10px;cursor:pointer;line-height:1}
+  .theme-switch button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .theme-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media(max-width:480px){ .theme-switch button{padding:5px 8px;font-size:10.5px} }
   .wrap{max-width:920px;margin:0 auto;padding:0 18px 80px}
 
   /* Header */
   header.masthead{padding:34px 0 18px}
   .kicker{
-    font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--grass);
+    font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    background:var(--wc-grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+    display:inline-block;
   }
   h1{
     margin:6px 0 6px;font-size:clamp(28px,6vw,44px);line-height:1.02;
@@ -53,7 +115,7 @@
   /* Controls */
   .controls{
     position:sticky;top:0;z-index:20;
-    background:rgba(251,250,247,.86);
+    background:var(--paper-blur);
     backdrop-filter:saturate(140%) blur(8px);
     border-bottom:1px solid var(--line);
     margin:0 -18px;padding:12px 18px;
@@ -142,7 +204,7 @@
   .vs{color:var(--faint);font-weight:600;font-size:13px;padding:0 2px}
   .score{
     font-variant-numeric:tabular-nums;font-weight:800;
-    background:var(--ink);color:#fff;border-radius:7px;padding:1px 8px;font-size:14px;
+    background:var(--ink);color:var(--paper);border-radius:7px;padding:1px 8px;font-size:14px;
     margin:0 2px;letter-spacing:.02em
   }
   .placeholder{color:var(--muted);font-weight:600;font-size:14px}
@@ -155,7 +217,7 @@
     font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
     color:var(--grass);background:var(--grass-soft);padding:3px 8px;border-radius:6px;white-space:nowrap
   }
-  .grp.knock{color:var(--gold);background:#FBF3DC}
+  .grp.knock{color:var(--gold);background:var(--gold-soft)}
   .status{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
   .status.up{color:var(--faint)}
   .status.ft{color:var(--muted)}
@@ -181,7 +243,7 @@
     border:1px solid var(--line-strong);border-radius:11px;padding:4px}
   .vtab{font:inherit;font-size:13.5px;font-weight:700;color:var(--muted);
     background:none;border:none;border-radius:8px;padding:7px 16px;cursor:pointer}
-  .vtab[aria-selected=true]{background:var(--grass);color:#fff}
+  .vtab[aria-selected=true]{background:var(--accent);color:#fff}
   .vtab:focus-visible{outline:2px solid var(--grass);outline-offset:2px}
 
   /* Standings */
@@ -189,10 +251,10 @@
   .standings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media(max-width:680px){.standings-grid{grid-template-columns:1fr}}
   .gcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);overflow:hidden}
+    box-shadow:var(--shadow);overflow:hidden;border-top:3px solid var(--gc,var(--accent))}
   .gcard-head{display:flex;align-items:baseline;justify-content:space-between;
     padding:11px 14px;border-bottom:1px solid var(--line)}
-  .gcard-head .gname{font-weight:800;font-size:14px;letter-spacing:-.01em}
+  .gcard-head .gname{font-weight:800;font-size:14px;letter-spacing:-.01em;color:var(--gc,var(--ink))}
   .gcard-head .gmeta{font-size:11px;color:var(--faint);font-weight:600}
   table.gt{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
   .gt th,.gt td{padding:7px 5px;text-align:center;white-space:nowrap}
@@ -205,7 +267,7 @@
   .gt tr.q td.pos{color:var(--grass)}
   .gt tr.q{background:linear-gradient(90deg,var(--grass-soft),transparent 55%)}
   .gt tr.q3 td.pos{color:var(--gold)}
-  .gt tr.q3{background:linear-gradient(90deg,#FBF3DC,transparent 55%)}
+  .gt tr.q3{background:linear-gradient(90deg,var(--gold-soft),transparent 55%)}
   .gt .tc .team{font-weight:700}
   .gt .tc .nm{font-size:12.5px}
   .gt .tc .fl{font-size:14px}
@@ -222,7 +284,7 @@
   .nn-live{background:var(--live-soft)}
   .nn-live .nn-label{color:var(--live)}
   .nn-match{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
-  .nn-score{font-variant-numeric:tabular-nums;background:var(--ink);color:#fff;border-radius:6px;padding:1px 7px;margin:0 4px;font-size:13px}
+  .nn-score{font-variant-numeric:tabular-nums;background:var(--ink);color:var(--paper);border-radius:6px;padding:1px 7px;margin:0 4px;font-size:13px}
   .nn-when{font-size:12.5px;color:var(--muted)}
   .nn-cd{font-variant-numeric:tabular-nums;font-weight:800;color:var(--grass);font-size:14px}
   .nn-dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.4s infinite}
@@ -249,7 +311,7 @@
   .bracket{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
   .bround{display:flex;flex-direction:column;min-width:158px;flex:0 0 auto}
   .bround-title{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--faint);margin-bottom:8px;text-align:center}
+    color:var(--rc,var(--accent));margin-bottom:8px;text-align:center}
   .bround-matches{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:8px}
   .bmatch{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
   .bteam{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;font-size:12.5px;letter-spacing:-.01em}
@@ -267,8 +329,8 @@
   /* Top scorers */
   .scorer-card{max-width:540px}
   .gt td.tmcol,.gt th.tmcol{color:var(--muted);font-weight:600}
-  .gt tr.srow td.pts{color:var(--grass)}
-  .gt tr.favrow{background:linear-gradient(90deg,#FBF3DC,transparent 60%)}
+  .gt tr.srow td.pts{color:var(--accent)}
+  .gt tr.favrow{background:linear-gradient(90deg,var(--gold-soft),transparent 60%)}
   .gt tr.favrow td.tc .nm{font-weight:800}
 
   footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
@@ -277,6 +339,12 @@
 </style>
 </head>
 <body>
+<div class="topbar-grad"></div>
+<div class="theme-switch" role="group" aria-label="Colour theme">
+  <button type="button" data-theme-set="light"  aria-pressed="true">Light</button>
+  <button type="button" data-theme-set="medium" aria-pressed="false">Medium</button>
+  <button type="button" data-theme-set="dark"   aria-pressed="false">Dark</button>
+</div>
 <div class="wrap">
   <header class="masthead">
     <div class="kicker">United States · Canada · Mexico</div>
@@ -861,7 +929,7 @@ function renderStandings(){
         <td class="pts">${t.Pts}</td>
       </tr>`;
     }).join("");
-    return `<div class="gcard">
+    return `<div class="gcard" style="--gc:var(--g${letter})">
       <div class="gcard-head">
         <span class="gname">Group ${letter}</span>
         <span class="gmeta">${played} of ${total} played</span>
@@ -913,7 +981,8 @@ function bMatchHTML(m){
 }
 function bRoundHTML(stage,title){
   const cards=roundOrder(stage).map(n=>bMatchHTML(byN[n])).join("");
-  return `<div class="bround"><div class="bround-title">${title}</div><div class="bround-matches">${cards}</div></div>`;
+  const rc={R32:"var(--c-blue)",R16:"var(--c-green)",QF:"var(--c-violet)",SF:"var(--gJ)",FINAL:"var(--gold)"}[stage]||"var(--accent)";
+  return `<div class="bround"><div class="bround-title" style="--rc:${rc}">${title}</div><div class="bround-matches">${cards}</div></div>`;
 }
 function renderBracket(){
   bracketEl.innerHTML = `
@@ -958,6 +1027,7 @@ let currentView="schedule";
 const vtabs=[...document.querySelectorAll(".vtab")];
 function setView(v, scroll){
   currentView=v;
+  document.body.dataset.view=v;
   vtabs.forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v ? "true":"false"));
   document.querySelector(".controls").style.display = v==="schedule" ? "" : "none";
   listEl.hidden = v!=="schedule";
@@ -1075,7 +1145,20 @@ vtabs.forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view, false)))
 /* re-render the "scores updated" label when the time zone changes */
 tzSel.addEventListener("change", paintUpdated);
 
+/* ---------- Theme (light / medium / dark), persisted ---------- */
+const themeBtns=[...document.querySelectorAll(".theme-switch [data-theme-set]")];
+function applyTheme(t){
+  document.documentElement.dataset.theme=t;
+  themeBtns.forEach(b=>b.setAttribute("aria-pressed", b.dataset.themeSet===t ? "true":"false"));
+  try{ localStorage.setItem("wc26_theme", t); }catch{}
+}
+themeBtns.forEach(b=>b.addEventListener("click", ()=>applyTheme(b.dataset.themeSet)));
+let savedTheme="light";
+try{ savedTheme = localStorage.getItem("wc26_theme") || "light"; }catch{}
+applyTheme(["light","medium","dark"].includes(savedTheme) ? savedTheme : "light");
+
 /* ---------- Init ---------- */
+document.body.dataset.view="schedule";   // drives the per-section accent colour
 populateDates();
 syncHostChips();
 render("instant");                 // paint the schedule immediately (jumps to today)
