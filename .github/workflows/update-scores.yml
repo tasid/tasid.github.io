@@ -29,8 +29,6 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Fetch latest scores and write results.json
-        env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: node scripts/update-results.mjs
 
       - name: Commit and push if results.json changed
