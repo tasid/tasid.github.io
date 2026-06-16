@@ -27,15 +27,15 @@ scheduled GitHub Action rewrites nightly from a football data API.
 
 1. Push these files to a GitHub repo.
 2. **Settings → Pages** → Source: *Deploy from a branch* → `main` / `root`.
-3. Get a free API key at https://www.api-football.com and add it under
-   **Settings → Secrets and variables → Actions → New repository secret**
-   named `API_FOOTBALL_KEY`.
-4. **Actions** tab → enable workflows → open *Update scores* → *Run workflow* to test.
+3. **Actions** tab → enable workflows → open *Update scores* → *Run workflow* to test.
+
+No API key or secret is required — scores come from the free, public-domain
+[openfootball/worldcup.json](https://github.com/openfootball/worldcup.json) file.
 
 ## Run the updater locally
 
 ```bash
-API_FOOTBALL_KEY=your_key node scripts/update-results.mjs
+node scripts/update-results.mjs
 ```
 
 ## Notes
