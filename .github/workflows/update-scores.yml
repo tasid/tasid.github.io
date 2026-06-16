@@ -10,8 +10,8 @@ name: Update scores
 #   You can also trigger it anytime via the "Run workflow" button (workflow_dispatch).
 on:
   schedule:
-    - cron: "20,50 18-23 * * *"   # ~5 min after afternoon/early-evening finishes (1:20 PM – 6:50 PM CT)
-    - cron: "20,50 0-6 * * *"     # ~5 min after late finishes (7:20 PM – 1:50 AM CT)
+    - cron: "*/15 18-23 * * *"   # ~5 min after afternoon/early-evening finishes (1:20 PM – 6:50 PM CT)
+    - cron: "*/15 0-6 * * *"     # ~5 min after late finishes (7:20 PM – 1:50 AM CT)
     - cron: "0 13 * * *"          # 8:00 AM CT — catch any results curated overnight
   workflow_dispatch:
 
