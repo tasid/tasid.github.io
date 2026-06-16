@@ -240,6 +240,28 @@
   .thirds h3{font-size:14px;font-weight:800;letter-spacing:-.01em;margin:0 2px 4px}
   .thirds .tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 
+  /* Penalty annotation in scores */
+  .pens{font-size:11px;color:var(--faint);font-weight:700;font-variant-numeric:tabular-nums}
+
+  /* Knockout bracket */
+  .bracket{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
+  .bround{display:flex;flex-direction:column;min-width:158px;flex:0 0 auto}
+  .bround-title{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--faint);margin-bottom:8px;text-align:center}
+  .bround-matches{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:8px}
+  .bmatch{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+  .bteam{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;font-size:12.5px;letter-spacing:-.01em}
+  .bteam + .bteam{border-top:1px solid var(--line)}
+  .bteam .bn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bteam .bg{font-variant-numeric:tabular-nums;font-weight:800;font-size:12.5px}
+  .bteam.win{font-weight:800}
+  .bteam.win .bn{color:var(--grass)}
+  .bteam.lose{color:var(--muted)}
+  .bteam.slot .bn{color:var(--faint);font-style:italic;font-weight:600;font-size:11.5px}
+  .bpens{text-align:center;font-size:10px;color:var(--faint);font-weight:700;padding:2px 0 4px;background:var(--paper)}
+  .bthird{margin-top:18px;max-width:220px}
+  .bthird h3{font-size:13px;font-weight:800;margin:0 2px 6px}
+
   footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
     font-size:12px;color:var(--faint);line-height:1.6}
   footer a{color:var(--muted)}
@@ -263,6 +285,7 @@
   <div class="viewtabs" role="tablist" aria-label="View">
     <button class="vtab" data-view="schedule" role="tab" aria-selected="true">Schedule</button>
     <button class="vtab" data-view="standings" role="tab" aria-selected="false">Group standings</button>
+    <button class="vtab" data-view="bracket" role="tab" aria-selected="false">Bracket</button>
   </div>
 
   <div id="nowNext" class="nownext" hidden></div>
@@ -316,6 +339,7 @@
 
   <main id="list" aria-live="polite"></main>
   <section id="standings" hidden></section>
+  <section id="bracket" hidden></section>
 
   <footer>
     Times convert automatically from the official Eastern Time schedule using your selected zone (daylight saving handled by your browser). Knockout fixtures show bracket slots until teams are confirmed. Built as a standalone page — works offline.<br>
@@ -491,10 +515,16 @@ const M = [
 
 /* Build match objects (scores are loaded from results.json at runtime) */
 const MATCHES = M.map(a => ({
-  n:a[0], stage:a[1], group:a[2], iso:a[3], t1:a[4], t2:a[5],
-  venue:a[6], city:a[7], vtz:a[8], result:null, fixedStatus:null,
+  n:a[0], stage:a[1], group:a[2], iso:a[3],
+  t1:a[4], t2:a[5], slot1:a[4], slot2:a[5],     // slot* keep the original bracket label
+  venue:a[6], city:a[7], vtz:a[8], result:null, pens:null, fixedStatus:null,
   date:new Date(a[3])
 })).sort((x,y)=>x.date-y.date);
+
+/* lookup by match number + knockout feed graph (which match feeds each slot) */
+const byN = Object.fromEntries(MATCHES.map(m=>[m.n,m]));
+const feedNum = label => { const r=/(?:Winner|Loser)\s+(\d+)/.exec(label); return r?+r[1]:null; };
+MATCHES.forEach(m=>{ m.feed1=feedNum(m.slot1); m.feed2=feedNum(m.slot2); });
 
 /* ---------- DOM refs ---------- */
 const $ = id => document.getElementById(id);
@@ -540,6 +570,17 @@ function statusOf(m){
   return "ft";
 }
 
+/* winning side of a played match: 1 = t1, 2 = t2, 0 = drawn / not decided */
+function winnerSide(m){
+  if(!m.result) return 0;
+  const [a,b]=m.result.split("–").map(Number);
+  if(a>b) return 1;
+  if(b>a) return 2;
+  if(m.pens) return m.pens[0]>m.pens[1] ? 1 : (m.pens[1]>m.pens[0] ? 2 : 0);
+  return 0;
+}
+function penHTML(m){ return m.pens ? ` <span class="pens">(${m.pens[0]}–${m.pens[1]} p)</span>` : ""; }
+
 /* ---------- Load live scores from results.json (written nightly by the GitHub Action) ---------- */
 let lastUpdated=null;
 async function loadResults(){
@@ -555,6 +596,7 @@ async function loadResults(){
       if(r){
         m.result = (typeof r==="string") ? r : (r.h+"–"+r.a);
         m.fixedStatus = (typeof r==="object" && r.status) ? r.status : null;
+        m.pens = (typeof r==="object" && Array.isArray(r.p)) ? r.p : null;
       }
       const t=teamOverride[m.n] ?? teamOverride[String(m.n)];
       if(t){ if(t.h) m.t1=t.h; if(t.a) m.t2=t.a; }
@@ -673,7 +715,7 @@ function render(scrollToToday){
       let centerMid;
       if(st!=="up" && m.result){
         const [a,b]=m.result.split("–");
-        centerMid=`<span class="score">${a}–${b}</span>`;
+        centerMid=`<span class="score">${a}–${b}</span>${penHTML(m)}`;
       }else{
         centerMid=`<span class="vs">v</span>`;
       }
@@ -719,6 +761,7 @@ function setDayTop(){ document.documentElement.style.setProperty("--dayTop", con
 /* ---------- Group standings ---------- */
 const GROUP_LETTERS=[...new Set(MATCHES.filter(m=>m.stage==="GROUP").map(m=>m.group))].sort();
 const standingsEl=$("standings");
+const bracketEl=$("bracket");
 
 function computeGroup(letter){
   const ms=MATCHES.filter(m=>m.stage==="GROUP" && m.group===letter);
@@ -819,20 +862,67 @@ function renderStandings(){
   renderBanner();
 }
 
+/* ---------- Knockout bracket ---------- */
+function roundOrder(stage){           // match numbers of a round, in bracket (top-to-bottom) order
+  const out=[];
+  (function dfs(n){
+    const m=byN[n]; if(!m) return;
+    if(m.stage===stage){ out.push(n); return; }
+    if(m.feed1) dfs(m.feed1);
+    if(m.feed2) dfs(m.feed2);
+  })(104);
+  return out;
+}
+function bMatchHTML(m){
+  const w=winnerSide(m);
+  const sc = m.result ? m.result.split("–") : null;
+  const side=(team,slot,idx)=>{
+    const real=!!RANK[team];
+    const name=real?team:slot;
+    const cls="bteam"+(real?"":" slot")+(w===idx?" win":(w&&w!==idx?" lose":""));
+    const g = sc ? `<span class="bg">${sc[idx-1]}</span>` : "";
+    return `<div class="${cls}"><span class="bn">${name}</span>${g}</div>`;
+  };
+  const pens = m.pens ? `<div class="bpens">pens ${m.pens[0]}–${m.pens[1]}</div>` : "";
+  return `<div class="bmatch">${side(m.t1,m.slot1,1)}${side(m.t2,m.slot2,2)}${pens}</div>`;
+}
+function bRoundHTML(stage,title){
+  const cards=roundOrder(stage).map(n=>bMatchHTML(byN[n])).join("");
+  return `<div class="bround"><div class="bround-title">${title}</div><div class="bround-matches">${cards}</div></div>`;
+}
+function renderBracket(){
+  bracketEl.innerHTML = `
+    <div class="standings-note">Teams fill in automatically as group standings settle and knockout matches are played. Scroll sideways to follow the path to the final.</div>
+    <div class="bracket">
+      ${bRoundHTML("R32","Round of 32")}
+      ${bRoundHTML("R16","Round of 16")}
+      ${bRoundHTML("QF","Quarter-finals")}
+      ${bRoundHTML("SF","Semi-finals")}
+      ${bRoundHTML("FINAL","Final")}
+    </div>
+    <div class="bthird"><h3>Third-place play-off</h3>${bMatchHTML(byN[103])}</div>`;
+  renderBanner();
+}
+
 /* ---------- View switching ---------- */
 let currentView="schedule";
 const vtabs=[...document.querySelectorAll(".vtab")];
 function setView(v, scroll){
   currentView=v;
   vtabs.forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v ? "true":"false"));
-  const schedule = v==="schedule";
-  document.querySelector(".controls").style.display = schedule ? "" : "none";
-  listEl.hidden = !schedule;
-  standingsEl.hidden = schedule;
-  if(schedule){ render(scroll); setDayTop(); }
-  else renderStandings();
+  document.querySelector(".controls").style.display = v==="schedule" ? "" : "none";
+  listEl.hidden = v!=="schedule";
+  standingsEl.hidden = v!=="standings";
+  bracketEl.hidden = v!=="bracket";
+  if(v==="schedule"){ render(scroll); setDayTop(); }
+  else if(v==="standings") renderStandings();
+  else renderBracket();
 }
-function refresh(){ currentView==="schedule" ? render(false) : renderStandings(); }
+function refresh(){
+  if(currentView==="schedule") render(false);
+  else if(currentView==="standings") renderStandings();
+  else renderBracket();
+}
 
 /* ---------- Now / Next banner ---------- */
 function fmtCountdown(ms){
