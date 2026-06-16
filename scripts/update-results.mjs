@@ -2,15 +2,17 @@
 /**
  * update-results.mjs
  * --------------------------------------------------------------------------
- * Fetches FIFA World Cup 2026 fixtures from API-Football and rewrites
- * results.json (consumed by index.html).
+ * Fetches FIFA World Cup 2026 results and rewrites results.json (read by index.html).
  *
- * Run locally:   API_FOOTBALL_KEY=xxxx node scripts/update-results.mjs
- * In CI:         the GitHub Action passes the key via env (see workflow).
+ * Run locally:   node scripts/update-results.mjs
+ * In CI:         the GitHub Action runs this on a schedule (no secrets needed).
  *
- * Data source:   https://www.api-football.com  (free tier: 100 req/day)
- *                League id 1 = FIFA World Cup, season 2026.
- * Swap providers by editing fetchFixtures() only — the rest is provider-agnostic.
+ * Data source:   openfootball/worldcup.json  — free, public domain, NO API KEY.
+ *                A plain JSON file served from GitHub's CDN; final scores only,
+ *                which is all a nightly job needs. Community-curated, so a fresh
+ *                result may lag a few hours — fine for a once/twice-daily update.
+ * Swap providers by editing fetchMatches() + the loop in main(); the name
+ * matching (GROUP / canon) is provider-agnostic.
  * --------------------------------------------------------------------------
  */
 import { writeFileSync, readFileSync } from "node:fs";
@@ -20,8 +22,7 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "..", "results.json");
 
-const API_KEY = process.env.API_FOOTBALL_KEY;
-if (!API_KEY) { console.error("Missing API_FOOTBALL_KEY env var."); process.exit(1); }
+const SRC = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
 
 /* Group-stage fixtures keyed by normalized "teamA|teamB" (alphabetical) ->
    [matchNumber, ourHomeCanon, ourAwayCanon]. The home/away canon lets us store
@@ -44,56 +45,44 @@ const ALIAS = {
 };
 const canon = name => { const n = norm(name); return ALIAS[n] || n; };
 
-/* Map an API status to ours: FT-ish -> "FT", in-play -> "LIVE", else skip (not started). */
-function mapStatus(short) {
-  if (["FT","AET","PEN"].includes(short)) return "FT";
-  if (["1H","2H","HT","ET","BT","P","LIVE","INT"].includes(short)) return "LIVE";
-  return null; // NS, TBD, PST, CANC, etc.
-}
-
-async function fetchFixtures() {
-  const url = "https://v3.football.api-sports.io/fixtures?league=1&season=2026";
-  const res = await fetch(url, { headers: { "x-apisports-key": API_KEY } });
-  if (!res.ok) throw new Error("API request failed: HTTP " + res.status);
+async function fetchMatches() {
+  const res = await fetch(SRC, { headers: { "User-Agent": "wc2026-updater" } });
+  if (!res.ok) throw new Error("Data request failed: HTTP " + res.status);
   const json = await res.json();
-  if (json.errors && Object.keys(json.errors).length) {
-    throw new Error("API returned errors: " + JSON.stringify(json.errors));
-  }
-  return json.response || [];
+  return json.matches || [];
 }
 
 async function main() {
-  const fixtures = await fetchFixtures();
+  const matches = await fetchMatches();
 
-  // start from existing file so we never lose a result the API briefly omits
+  // start from existing file so we never lose a result the source briefly omits
   let prev = { results: {}, teams: {} };
   try { prev = JSON.parse(readFileSync(OUT, "utf8")); } catch {}
 
   const results = { ...(prev.results || {}) };
   let updatedCount = 0;
 
-  for (const fx of fixtures) {
-    const short = fx?.fixture?.status?.short;
-    const status = mapStatus(short);
-    if (!status) continue;                       // skip not-yet-played
-    const h = fx?.goals?.home, a = fx?.goals?.away;
+  for (const m of matches) {
+    const ft = m.score && m.score.ft;             // [home, away] once played
+    if (!Array.isArray(ft) || ft.length < 2) continue;   // not played yet
+    const [h, a] = ft;
     if (h == null || a == null) continue;
 
-    const homeC = canon(fx.teams.home.name), awayC = canon(fx.teams.away.name);
+    const homeC = canon(m.team1), awayC = canon(m.team2);
     const key = [homeC, awayC].sort().join("|");
     const entry = GROUP[key];
-    if (!entry) continue;                        // knockout or unmatched name -> skip
+    if (!entry) continue;                          // knockout/placeholder or unmatched -> skip
     const [n, ourHome] = entry;
 
     // orient goals to OUR fixture's home/away order
-    results[n] = (homeC === ourHome) ? { h, a, status } : { h: a, a: h, status };
+    results[n] = (homeC === ourHome) ? { h, a, status: "FT" } : { h: a, a: h, status: "FT" };
     updatedCount++;
   }
 
   const out = {
     updated: new Date().toISOString(),
     results,
-    teams: prev.teams || {}                       // preserve any manual knockout team overrides
+    teams: prev.teams || {}                        // preserve any manual knockout team overrides
   };
   writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
   console.log(`Wrote ${OUT} — ${Object.keys(results).length} results (${updatedCount} from this run).`);
