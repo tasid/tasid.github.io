@@ -24,26 +24,22 @@ const OUT = join(__dirname, "..", "results.json");
 
 const SRC = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
 
-/* Group-stage fixtures keyed by normalized "teamA|teamB" (alphabetical) ->
-   [matchNumber, ourHomeCanon, ourAwayCanon]. The home/away canon lets us store
-   goals in OUR fixture's order regardless of how the provider labels home/away.
-   Knockout matches are not here (teams are decided during the tournament). */
-const GROUP = {"mexico|southafrica":[1,"mexico","southafrica"],"czechia|southkorea":[2,"southkorea","czechia"],"bosniaherzegovina|canada":[3,"canada","bosniaherzegovina"],"paraguay|usa":[4,"usa","paraguay"],"qatar|switzerland":[5,"qatar","switzerland"],"brazil|morocco":[6,"brazil","morocco"],"haiti|scotland":[7,"haiti","scotland"],"australia|turkiye":[8,"australia","turkiye"],"curacao|germany":[9,"germany","curacao"],"japan|netherlands":[10,"netherlands","japan"],"ecuador|ivorycoast":[11,"ivorycoast","ecuador"],"sweden|tunisia":[12,"sweden","tunisia"],"capeverde|spain":[13,"spain","capeverde"],"belgium|egypt":[14,"belgium","egypt"],"saudiarabia|uruguay":[15,"saudiarabia","uruguay"],"iran|newzealand":[16,"iran","newzealand"],"france|senegal":[17,"france","senegal"],"iraq|norway":[18,"iraq","norway"],"algeria|argentina":[19,"argentina","algeria"],"austria|jordan":[20,"austria","jordan"],"drcongo|portugal":[21,"portugal","drcongo"],"croatia|england":[22,"england","croatia"],"ghana|panama":[23,"ghana","panama"],"colombia|uzbekistan":[24,"uzbekistan","colombia"],"czechia|southafrica":[25,"czechia","southafrica"],"bosniaherzegovina|switzerland":[26,"switzerland","bosniaherzegovina"],"canada|qatar":[27,"canada","qatar"],"mexico|southkorea":[28,"mexico","southkorea"],"australia|usa":[29,"usa","australia"],"morocco|scotland":[30,"scotland","morocco"],"brazil|haiti":[31,"brazil","haiti"],"paraguay|turkiye":[32,"turkiye","paraguay"],"netherlands|sweden":[33,"netherlands","sweden"],"germany|ivorycoast":[34,"germany","ivorycoast"],"curacao|ecuador":[35,"ecuador","curacao"],"japan|tunisia":[36,"tunisia","japan"],"saudiarabia|spain":[37,"spain","saudiarabia"],"belgium|iran":[38,"belgium","iran"],"capeverde|uruguay":[39,"uruguay","capeverde"],"egypt|newzealand":[40,"newzealand","egypt"],"argentina|austria":[41,"argentina","austria"],"france|iraq":[42,"france","iraq"],"norway|senegal":[43,"norway","senegal"],"algeria|jordan":[44,"jordan","algeria"],"portugal|uzbekistan":[45,"portugal","uzbekistan"],"england|ghana":[46,"england","ghana"],"croatia|panama":[47,"panama","croatia"],"colombia|drcongo":[48,"colombia","drcongo"],"canada|switzerland":[49,"switzerland","canada"],"bosniaherzegovina|qatar":[50,"bosniaherzegovina","qatar"],"brazil|scotland":[51,"scotland","brazil"],"haiti|morocco":[52,"morocco","haiti"],"czechia|mexico":[53,"czechia","mexico"],"southafrica|southkorea":[54,"southafrica","southkorea"],"curacao|ivorycoast":[55,"curacao","ivorycoast"],"ecuador|germany":[56,"ecuador","germany"],"japan|sweden":[57,"japan","sweden"],"netherlands|tunisia":[58,"tunisia","netherlands"],"turkiye|usa":[59,"turkiye","usa"],"australia|paraguay":[60,"paraguay","australia"],"france|norway":[61,"norway","france"],"iraq|senegal":[62,"senegal","iraq"],"capeverde|saudiarabia":[63,"capeverde","saudiarabia"],"spain|uruguay":[64,"uruguay","spain"],"egypt|iran":[65,"egypt","iran"],"belgium|newzealand":[66,"newzealand","belgium"],"england|panama":[67,"panama","england"],"croatia|ghana":[68,"croatia","ghana"],"colombia|portugal":[69,"colombia","portugal"],"drcongo|uzbekistan":[70,"drcongo","uzbekistan"],"algeria|austria":[71,"algeria","austria"],"argentina|jordan":[72,"jordan","argentina"]};
+/* Group matches in the source carry no match number, so we match them by team pair ->
+   [matchNumber, ourHomeCanon]. (Knockout matches DO carry a `num` field, handled below.) */
+const GROUP = {"mexico|southafrica":[1,"mexico"],"czechia|southkorea":[2,"southkorea"],"bosniaherzegovina|canada":[3,"canada"],"paraguay|usa":[4,"usa"],"qatar|switzerland":[5,"qatar"],"brazil|morocco":[6,"brazil"],"haiti|scotland":[7,"haiti"],"australia|turkiye":[8,"australia"],"curacao|germany":[9,"germany"],"japan|netherlands":[10,"netherlands"],"ecuador|ivorycoast":[11,"ivorycoast"],"sweden|tunisia":[12,"sweden"],"capeverde|spain":[13,"spain"],"belgium|egypt":[14,"belgium"],"saudiarabia|uruguay":[15,"saudiarabia"],"iran|newzealand":[16,"iran"],"france|senegal":[17,"france"],"iraq|norway":[18,"iraq"],"algeria|argentina":[19,"argentina"],"austria|jordan":[20,"austria"],"drcongo|portugal":[21,"portugal"],"croatia|england":[22,"england"],"ghana|panama":[23,"ghana"],"colombia|uzbekistan":[24,"uzbekistan"],"czechia|southafrica":[25,"czechia"],"bosniaherzegovina|switzerland":[26,"switzerland"],"canada|qatar":[27,"canada"],"mexico|southkorea":[28,"mexico"],"australia|usa":[29,"usa"],"morocco|scotland":[30,"scotland"],"brazil|haiti":[31,"brazil"],"paraguay|turkiye":[32,"turkiye"],"netherlands|sweden":[33,"netherlands"],"germany|ivorycoast":[34,"germany"],"curacao|ecuador":[35,"ecuador"],"japan|tunisia":[36,"tunisia"],"saudiarabia|spain":[37,"spain"],"belgium|iran":[38,"belgium"],"capeverde|uruguay":[39,"uruguay"],"egypt|newzealand":[40,"newzealand"],"argentina|austria":[41,"argentina"],"france|iraq":[42,"france"],"norway|senegal":[43,"norway"],"algeria|jordan":[44,"jordan"],"portugal|uzbekistan":[45,"portugal"],"england|ghana":[46,"england"],"croatia|panama":[47,"panama"],"colombia|drcongo":[48,"colombia"],"canada|switzerland":[49,"switzerland"],"bosniaherzegovina|qatar":[50,"bosniaherzegovina"],"brazil|scotland":[51,"scotland"],"haiti|morocco":[52,"morocco"],"czechia|mexico":[53,"czechia"],"southafrica|southkorea":[54,"southafrica"],"curacao|ivorycoast":[55,"curacao"],"ecuador|germany":[56,"ecuador"],"japan|sweden":[57,"japan"],"netherlands|tunisia":[58,"tunisia"],"turkiye|usa":[59,"turkiye"],"australia|paraguay":[60,"paraguay"],"france|norway":[61,"norway"],"iraq|senegal":[62,"senegal"],"capeverde|saudiarabia":[63,"capeverde"],"spain|uruguay":[64,"uruguay"],"egypt|iran":[65,"egypt"],"belgium|newzealand":[66,"newzealand"],"england|panama":[67,"panama"],"croatia|ghana":[68,"croatia"],"colombia|portugal":[69,"colombia"],"drcongo|uzbekistan":[70,"drcongo"],"algeria|austria":[71,"algeria"],"argentina|jordan":[72,"jordan"]};
 
-/* Normalize a team name, then map provider spellings to our canonical keys. */
-const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+/* canonical normalized name -> OUR display spelling (used to resolve knockout teams
+   as they appear, and to normalize source spellings like "Czech Republic" -> "Czechia"). */
+const DISPLAY = {"argentina":"Argentina","spain":"Spain","france":"France","england":"England","portugal":"Portugal","brazil":"Brazil","morocco":"Morocco","netherlands":"Netherlands","belgium":"Belgium","germany":"Germany","croatia":"Croatia","colombia":"Colombia","mexico":"Mexico","senegal":"Senegal","uruguay":"Uruguay","usa":"USA","japan":"Japan","switzerland":"Switzerland","iran":"Iran","turkiye":"Türkiye","ecuador":"Ecuador","austria":"Austria","southkorea":"South Korea","australia":"Australia","algeria":"Algeria","egypt":"Egypt","canada":"Canada","norway":"Norway","ivorycoast":"Ivory Coast","panama":"Panama","sweden":"Sweden","czechia":"Czechia","paraguay":"Paraguay","scotland":"Scotland","tunisia":"Tunisia","drcongo":"DR Congo","uzbekistan":"Uzbekistan","qatar":"Qatar","iraq":"Iraq","southafrica":"South Africa","saudiarabia":"Saudi Arabia","jordan":"Jordan","bosniaherzegovina":"Bosnia & Herzegovina","capeverde":"Cape Verde","ghana":"Ghana","curacao":"Curaçao","haiti":"Haiti","newzealand":"New Zealand"};
+
+const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
 const ALIAS = {
-  korearepublic:"southkorea", southkorea:"southkorea",
-  iriran:"iran", iran:"iran",
-  cotedivoire:"ivorycoast", ivorycoast:"ivorycoast",
-  unitedstates:"usa", usa:"usa",
-  czechrepublic:"czechia", czechia:"czechia",
-  caboverde:"capeverde", capeverde:"capeverde",
-  congodr:"drcongo", drcongo:"drcongo", democraticrepublicofcongo:"drcongo",
-  turkey:"turkiye", turkiye:"turkiye",
-  bosniaandherzegovina:"bosniaherzegovina", bosniaherzegovina:"bosniaherzegovina"
+  korearepublic:"southkorea", iriran:"iran", cotedivoire:"ivorycoast", unitedstates:"usa",
+  czechrepublic:"czechia", caboverde:"capeverde", congodr:"drcongo", democraticrepublicofcongo:"drcongo",
+  turkey:"turkiye", bosniaandherzegovina:"bosniaherzegovina"
 };
 const canon = name => { const n = norm(name); return ALIAS[n] || n; };
+const displayName = name => DISPLAY[canon(name)] || null;   // null => placeholder (e.g. "2A", "W73")
 
 async function fetchMatches() {
   const res = await fetch(SRC, { headers: { "User-Agent": "wc2026-updater" } });
@@ -52,40 +48,54 @@ async function fetchMatches() {
   return json.matches || [];
 }
 
+function ftScore(m) {
+  const ft = m.score && m.score.ft;
+  if (!Array.isArray(ft) || ft.length < 2 || ft[0] == null || ft[1] == null) return null;
+  const pens = Array.isArray(m.score.p) && m.score.p.length >= 2 ? [m.score.p[0], m.score.p[1]] : null;
+  return { ft, pens };
+}
+
 async function main() {
   const matches = await fetchMatches();
 
-  // start from existing file so we never lose a result the source briefly omits
+  // start from the existing file so a result the source briefly omits is never lost
   let prev = { results: {}, teams: {} };
   try { prev = JSON.parse(readFileSync(OUT, "utf8")); } catch {}
 
   const results = { ...(prev.results || {}) };
-  let updatedCount = 0;
+  const teams   = { ...(prev.teams   || {}) };
+  let scoreCount = 0, teamCount = 0;
 
   for (const m of matches) {
-    const ft = m.score && m.score.ft;             // [home, away] once played
-    if (!Array.isArray(ft) || ft.length < 2) continue;   // not played yet
-    const [h, a] = ft;
-    if (h == null || a == null) continue;
+    const sc = ftScore(m);
 
-    const homeC = canon(m.team1), awayC = canon(m.team2);
-    const key = [homeC, awayC].sort().join("|");
-    const entry = GROUP[key];
-    if (!entry) continue;                          // knockout/placeholder or unmatched -> skip
-    const [n, ourHome] = entry;
-
-    // orient goals to OUR fixture's home/away order
-    results[n] = (homeC === ourHome) ? { h, a, status: "FT" } : { h: a, a: h, status: "FT" };
-    updatedCount++;
+    if (m.num) {
+      // ---- Knockout match (carries the official match number) ----
+      const n = m.num;
+      const home = displayName(m.team1), away = displayName(m.team2);   // null while still a slot
+      if (home && away) { teams[n] = { h: home, a: away }; teamCount++; }
+      if (sc) {
+        const rec = { h: sc.ft[0], a: sc.ft[1], status: "FT" };          // source home/away order
+        if (sc.pens) rec.p = sc.pens;
+        results[n] = rec;
+        scoreCount++;
+      }
+    } else if (sc) {
+      // ---- Group match (no number in source): match by team pair ----
+      const homeC = canon(m.team1), awayC = canon(m.team2);
+      const entry = GROUP[[homeC, awayC].sort().join("|")];
+      if (!entry) continue;                                             // unmatched -> skip
+      const [n, ourHome] = entry;
+      results[n] = (homeC === ourHome)
+        ? { h: sc.ft[0], a: sc.ft[1], status: "FT" }
+        : { h: sc.ft[1], a: sc.ft[0], status: "FT" };                   // orient to our home/away
+      scoreCount++;
+    }
   }
 
-  const out = {
-    updated: new Date().toISOString(),
-    results,
-    teams: prev.teams || {}                        // preserve any manual knockout team overrides
-  };
+  const out = { updated: new Date().toISOString(), results, teams };
   writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
-  console.log(`Wrote ${OUT} — ${Object.keys(results).length} results (${updatedCount} from this run).`);
+  console.log(`Wrote ${OUT} — ${Object.keys(results).length} results, ${Object.keys(teams).length} resolved knockout teams (this run: ${scoreCount} scores, ${teamCount} teams).`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
