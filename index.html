@@ -94,8 +94,9 @@
   .chip[aria-pressed=true]{background:var(--grass);border-color:var(--grass);color:#fff}
   .toggle{
     display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--ink);
-    cursor:pointer;user-select:none;margin-left:auto
+    cursor:pointer;user-select:none
   }
+  .secondrow .toggle:first-of-type{margin-left:auto}
   .toggle input{width:16px;height:16px;accent-color:var(--grass)}
   .count{font-size:13px;color:var(--muted)}
   .count b{color:var(--ink)}
@@ -210,7 +211,36 @@
   .qkey .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
   .standings-note{font-size:12px;color:var(--faint);margin:2px 2px 16px}
 
+  /* Now / Next banner */
+  .nownext{margin:0 0 14px;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+  .nn-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:11px 15px}
+  .nn-row + .nn-row{border-top:1px solid var(--line)}
+  .nn-label{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .nn-live{background:var(--live-soft)}
+  .nn-live .nn-label{color:var(--live)}
+  .nn-match{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+  .nn-score{font-variant-numeric:tabular-nums;background:var(--ink);color:#fff;border-radius:6px;padding:1px 7px;margin:0 4px;font-size:13px}
+  .nn-when{font-size:12.5px;color:var(--muted)}
+  .nn-cd{font-variant-numeric:tabular-nums;font-weight:800;color:var(--grass);font-size:14px}
+  .nn-dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.4s infinite}
 
+  /* Favorite stars */
+  .star{background:none;border:none;cursor:pointer;padding:0 1px;font-size:14px;line-height:1;
+    color:var(--faint);transition:color .12s,transform .12s}
+  .star:hover{transform:scale(1.18)}
+  .star.on{color:var(--gold)}
+  .team.is-fav .nm{font-weight:800}
+  .nm[data-team]{cursor:pointer}
+  .nm[data-team]:hover{text-decoration:underline;text-decoration-color:var(--line-strong)}
+  .gt .star{font-size:13px}
+
+  /* Best third-place table */
+  .thirds{margin-top:22px}
+  .thirds h3{font-size:14px;font-weight:800;letter-spacing:-.01em;margin:0 2px 4px}
+  .thirds .tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
     font-size:12px;color:var(--faint);line-height:1.6}
   footer a{color:var(--muted)}
 </style>
@@ -234,6 +264,8 @@
     <button class="vtab" data-view="schedule" role="tab" aria-selected="true">Schedule</button>
     <button class="vtab" data-view="standings" role="tab" aria-selected="false">Group standings</button>
   </div>
+
+  <div id="nowNext" class="nownext" hidden></div>
 
   <div class="controls">
     <div class="controls-inner">
@@ -271,6 +303,7 @@
           <button class="chip" data-host="Mexico" aria-pressed="false">Mexico</button>
           <button class="chip" data-host="Canada" aria-pressed="false">Canada</button>
         </div>
+        <label class="toggle"><input type="checkbox" id="favOnly"> ★ My teams</label>
         <label class="toggle"><input type="checkbox" id="hideFinished"> Hide finished</label>
       </div>
       <div class="secondrow">
@@ -466,8 +499,19 @@ const MATCHES = M.map(a => ({
 /* ---------- DOM refs ---------- */
 const $ = id => document.getElementById(id);
 const tzSel=$("tz"), countrySel=$("country"), stageSel=$("stage"), dateSel=$("dateSel"),
-      hideFin=$("hideFinished"), listEl=$("list"), countEl=$("count"),
-      hostChips=$("hostChips");
+      hideFin=$("hideFinished"), favOnly=$("favOnly"), listEl=$("list"), countEl=$("count"),
+      hostChips=$("hostChips"), nowNextEl=$("nowNext");
+
+/* ---------- Favorite teams (persisted in the browser) ---------- */
+let favs;
+try { favs = new Set(JSON.parse(localStorage.getItem("wc26_favs") || "[]")); }
+catch { favs = new Set(); }
+function saveFavs(){ try { localStorage.setItem("wc26_favs", JSON.stringify([...favs])); } catch {} }
+function toggleFav(name){
+  if(favs.has(name)) favs.delete(name); else favs.add(name);
+  saveFavs();
+  refresh(); renderBanner();
+}
 
 /* Populate time-zone select (default = Central, user's region) */
 ZONES.forEach(([v,l])=>{ const o=document.createElement("option"); o.value=v; o.textContent=l; tzSel.appendChild(o); });
@@ -533,11 +577,15 @@ function paintUpdated(){
   el.innerHTML="Scores updated <b>"+when+"</b>";
 }
 
+function starHTML(name){
+  const on = favs.has(name);
+  return `<button class="star${on?" on":""}" data-team="${name}" aria-label="${on?"Unfavourite":"Favourite"} ${name}" title="Favourite team">${on?"★":"☆"}</button>`;
+}
 function teamHTML(name){
   const fl=FLAG[name], r=RANK[name];
   if(fl){
     const rk = r ? ` <span class="rank">#${r}</span>` : "";
-    return `<span class="team"><span class="nm">${name}</span>${rk}</span>`;
+    return `<span class="team${favs.has(name)?" is-fav":""}">${starHTML(name)}<span class="nm" data-team="${name}">${name}</span>${rk}</span>`;
   }
   return `<span class="team"><span class="placeholder">${name}</span></span>`;
 }
@@ -567,12 +615,14 @@ function render(scrollToToday){
   const stage=stageSel.value;
   const dateFilter=dateSel.value;
   const hide=hideFin.checked;
+  const fav=favOnly.checked;
   const todayKey=todayKeyFor();
 
   // attach the displayed-zone date key once, then filter
   let rows=MATCHES.map(m=>({m,key:dateKey(m)})).filter(({m,key})=>{
     if(stage!=="ALL" && m.stage!==stage) return false;
     if(country!=="ALL" && m.t1!==country && m.t2!==country) return false;
+    if(fav && !favs.has(m.t1) && !favs.has(m.t2)) return false;
     if(dateFilter!=="ALL" && key!==dateFilter) return false;
     if(hide && statusOf(m)==="ft") return false;
     return true;
@@ -582,7 +632,7 @@ function render(scrollToToday){
 
   listEl.innerHTML="";
   if(rows.length===0){
-    listEl.innerHTML=`<div class="empty"><b>No matches fit those filters.</b>${country!=="ALL"?"A specific country can only match group-stage games — knockout slots aren't assigned yet.":"Try widening the stage, date, or clearing the country filter."}</div>`;
+    listEl.innerHTML=`<div class="empty"><b>No matches fit those filters.</b>${fav?"No starred teams match — tap a ☆ next to any team to follow it.":(country!=="ALL"?"A specific country can only match group-stage games — knockout slots aren't assigned yet.":"Try widening the stage, date, or clearing the country filter.")}</div>`;
     return;
   }
 
@@ -659,6 +709,7 @@ function render(scrollToToday){
       window.scrollTo({top: Math.max(0, top), behavior: scrollToToday==="instant" ? "auto" : "smooth"});
     }
   }
+  renderBanner();
 }
 
 /* height of the sticky control bar, used for scroll offset + day-head sticky position */
@@ -692,7 +743,41 @@ function computeGroup(letter){
 
 function teamCell(name){
   const r=RANK[name];
-  return `<span class="team"><span class="nm">${name}</span>${r?` <span class="rank">#${r}</span>`:""}</span>`;
+  return `<span class="team${favs.has(name)?" is-fav":""}">${starHTML(name)}<span class="nm" data-team="${name}">${name}</span>${r?` <span class="rank">#${r}</span>`:""}</span>`;
+}
+
+function computeThirds(){
+  const thirds = GROUP_LETTERS.map(letter=>{
+    const {rows,played}=computeGroup(letter);
+    const t = rows[2];                          // 3rd-placed team in this group
+    return t ? {...t, group:letter, groupPlayed:played} : null;
+  }).filter(Boolean);
+  thirds.sort((x,y)=> y.Pts-x.Pts || y.GD-x.GD || y.GF-x.GF || x.team.localeCompare(y.team));
+  return thirds;
+}
+
+function renderThirds(){
+  const thirds=computeThirds();
+  const body=thirds.map((t,i)=>{
+    const cls = i<8 ? "q" : "";                 // 8 best third-place teams advance
+    return `<tr class="${cls}">
+      <td class="pos">${i+1}</td>
+      <td class="tc">${teamCell(t.team)}</td>
+      <td>${t.group}</td>
+      <td>${t.P}</td><td>${t.Pts}</td>
+      <td>${t.GD>0?"+":""}${t.GD}</td><td>${t.GF}</td>
+    </tr>`;
+  }).join("");
+  return `<div class="thirds">
+    <h3>Third-place ranking</h3>
+    <div class="standings-note">The 8 best third-placed teams (of 12) also reach the Round of 32. Order: points, goal difference, goals scored.</div>
+    <div class="tcard"><table class="gt">
+      <thead><tr>
+        <th class="pos">#</th><th class="tc">Team</th><th>Grp</th><th>P</th><th class="pts">Pts</th><th>GD</th><th>GF</th>
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table></div>
+  </div>`;
 }
 
 function renderStandings(){
@@ -729,7 +814,9 @@ function renderStandings(){
     <div class="qkey">
       <span><span class="sw" style="background:var(--grass)"></span>Top 2 — advance to Round of 32</span>
       <span><span class="sw" style="background:var(--gold)"></span>3rd — may advance (8 best third-place teams)</span>
-    </div>`;
+    </div>
+    ${renderThirds()}`;
+  renderBanner();
 }
 
 /* ---------- View switching ---------- */
@@ -747,9 +834,53 @@ function setView(v, scroll){
 }
 function refresh(){ currentView==="schedule" ? render(false) : renderStandings(); }
 
+/* ---------- Now / Next banner ---------- */
+function fmtCountdown(ms){
+  if(ms<=0) return "now";
+  const s=Math.floor(ms/1000);
+  const d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60;
+  if(d>0) return `${d}d ${h}h ${m}m`;
+  if(h>0) return `${h}h ${m}m ${sec}s`;
+  return `${m}m ${sec}s`;
+}
+function renderBanner(){
+  if(currentView!=="schedule"){ nowNextEl.hidden=true; return; }
+  const now=Date.now();
+  const live = MATCHES.filter(m=>statusOf(m)==="live");
+  const next = MATCHES.find(m=>m.date.getTime()>now);   // MATCHES is sorted ascending
+  if(!live.length && !next){ nowNextEl.hidden=true; return; }
+
+  let html="";
+  if(live.length){
+    const items = live.map(m=>{
+      if(m.result){ const [a,b]=m.result.split("–"); return `${m.t1} <span class="nn-score">${a}–${b}</span> ${m.t2}`; }
+      return `${m.t1} <span class="vs">v</span> ${m.t2}`;
+    }).join(' &nbsp;·&nbsp; ');
+    html += `<div class="nn-row nn-live"><span class="nn-label"><span class="nn-dot"></span> Live now</span><span class="nn-match">${items}</span></div>`;
+  }
+  if(next){
+    const z=zoneFor(next);
+    const when=fmt(next.date,z,{weekday:"short",hour:"numeric",minute:"2-digit",timeZoneName:"short"});
+    const stage = next.stage==="GROUP" ? "Group "+next.group : STAGE_NAME[next.stage];
+    html += `<div class="nn-row"><span class="nn-label">Next · ${stage}</span>`+
+            `<span class="nn-match">${next.t1} <span class="vs">v</span> ${next.t2}</span>`+
+            `<span class="nn-when">${when}</span>`+
+            `<span class="nn-cd" id="nnCd" data-ts="${next.date.getTime()}">in ${fmtCountdown(next.date.getTime()-now)}</span></div>`;
+  }
+  nowNextEl.innerHTML=html;
+  nowNextEl.hidden=false;
+}
+function tickBanner(){
+  const cd=document.getElementById("nnCd");
+  if(!cd) return;
+  const rem=(+cd.dataset.ts)-Date.now();
+  if(rem<=0){ renderBanner(); return; }   // kickoff reached -> reclassify live/next
+  cd.textContent="in "+fmtCountdown(rem);
+}
+
 /* ---------- Events ---------- */
 tzSel.addEventListener("change",()=>{ populateDates(); syncHostChips(); render(); });
-[countrySel,stageSel,dateSel,hideFin].forEach(el=>el.addEventListener("change",()=>{ syncHostChips(); render(); }));
+[countrySel,stageSel,dateSel,hideFin,favOnly].forEach(el=>el.addEventListener("change",()=>{ syncHostChips(); render(); }));
 
 hostChips.addEventListener("click",e=>{
   const btn=e.target.closest(".chip"); if(!btn) return;
@@ -766,6 +897,21 @@ function syncHostChips(){
   });
 }
 
+/* tapping a team name shows just that team's matches; tapping its star follows it */
+function filterToTeam(name){
+  countrySel.value = name;
+  favOnly.checked = false;
+  if(currentView!=="schedule") setView("schedule", false);
+  syncHostChips();
+  render("smooth");
+}
+document.addEventListener("click", e=>{
+  const star=e.target.closest(".star");
+  if(star){ toggleFav(star.dataset.team); return; }
+  const nm=e.target.closest(".nm[data-team]");
+  if(nm){ filterToTeam(nm.dataset.team); }
+});
+
 $("jumpToday").addEventListener("click",()=>{
   // clear any date filter so today is actually in view, then scroll to it
   if(dateSel.value!=="ALL"){ dateSel.value="ALL"; }
@@ -774,7 +920,7 @@ $("jumpToday").addEventListener("click",()=>{
 
 $("reset").addEventListener("click",()=>{
   tzSel.value="America/Chicago"; countrySel.value="ALL"; stageSel.value="ALL";
-  hideFin.checked=false; populateDates(); dateSel.value="ALL";
+  hideFin.checked=false; favOnly.checked=false; populateDates(); dateSel.value="ALL";
   syncHostChips(); render("smooth");
 });
 
@@ -797,6 +943,9 @@ loadResults().then(()=>refresh());  // then overlay scores once results.json arr
 
 /* every minute: re-fetch scores + refresh statuses/standings (no scroll) */
 setInterval(()=>loadResults().then(refresh), 60000);
+
+/* tick the Now/Next countdown every second */
+setInterval(tickBanner, 1000);
 </script>
 </body>
 </html>
