@@ -93,9 +93,29 @@ async function main() {
     }
   }
 
-  const out = { updated: new Date().toISOString(), results, teams };
+  // ---- Golden Boot: aggregate scorers across all played matches ----
+  // goals1 belong to team1, goals2 to team2. Own goals are excluded (they don't count
+  // for the scorer, and the named player is on the opposing side). In-game penalties count.
+  const scorerMap = new Map();
+  for (const m of matches) {
+    for (const [goals, teamName] of [[m.goals1, m.team1], [m.goals2, m.team2]]) {
+      if (!Array.isArray(goals)) continue;
+      const team = displayName(teamName) || teamName;
+      for (const g of goals) {
+        if (!g || !g.name || g.owngoal) continue;
+        const key = g.name + "@" + team;
+        const e = scorerMap.get(key) || { name: g.name, team, goals: 0, pens: 0 };
+        e.goals++; if (g.penalty) e.pens++;
+        scorerMap.set(key, e);
+      }
+    }
+  }
+  const scorers = [...scorerMap.values()]
+    .sort((a, b) => b.goals - a.goals || a.pens - b.pens || a.name.localeCompare(b.name));
+
+  const out = { updated: new Date().toISOString(), results, teams, scorers };
   writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
-  console.log(`Wrote ${OUT} — ${Object.keys(results).length} results, ${Object.keys(teams).length} resolved knockout teams (this run: ${scoreCount} scores, ${teamCount} teams).`);
+  console.log(`Wrote ${OUT} — ${Object.keys(results).length} results, ${Object.keys(teams).length} resolved knockout teams, ${scorers.length} scorers (this run: ${scoreCount} scores, ${teamCount} teams).`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
