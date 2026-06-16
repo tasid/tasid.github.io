@@ -1,15 +1,18 @@
 name: Update scores
 
-# When this runs:
-#   - On a schedule (cron is in UTC). 04:00 UTC = 11:00 PM Central during the
-#     tournament (CDT = UTC-5). A second run at 13:00 UTC = 8:00 AM Central
-#     catches the finals of late West-Coast / midnight-ET games that are still
-#     in progress at 11 PM CT.
-#   - Manually, anytime, via the "Run workflow" button (workflow_dispatch).
+# When this runs (cron is in UTC; during the tournament Central = CDT = UTC-5):
+#   Games kick off on the hour/half-hour and last ~2h15m, so they FINISH on the
+#   :15 and :45 marks. These schedules fire at :20 and :50 — about 5 minutes after
+#   each finish — across the whole daily match window (finishes span 18:15 UTC /
+#   1:15 PM CT through 06:15 UTC / 1:15 AM CT), plus a morning catch-up because the
+#   data source (openfootball) is community-curated and a result can land late.
+#   Runs that find no score change make no commit, so the extra runs are cheap.
+#   You can also trigger it anytime via the "Run workflow" button (workflow_dispatch).
 on:
   schedule:
-    - cron: "0 4 * * *"     # 11:00 PM America/Chicago (CDT)
-    - cron: "0 13 * * *"    # 8:00 AM  America/Chicago (CDT) — morning catch-up
+    - cron: "20,50 18-23 * * *"   # ~5 min after afternoon/early-evening finishes (1:20 PM – 6:50 PM CT)
+    - cron: "20,50 0-6 * * *"     # ~5 min after late finishes (7:20 PM – 1:50 AM CT)
+    - cron: "0 13 * * *"          # 8:00 AM CT — catch any results curated overnight
   workflow_dispatch:
 
 # Allow the job to push the updated results.json back to the repo.
