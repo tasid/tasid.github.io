@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T20:02:24.765Z",
+  "updated": "2026-06-16T20:08:17.473Z",
   "results": {
     "1": {
       "h": 2,
@@ -82,5 +82,247 @@
       "status": "FT"
     }
   },
-  "teams": {}
+  "teams": {},
+  "scorers": [
+    {
+      "name": "Elijah Just",
+      "team": "New Zealand",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Folarin Balogun",
+      "team": "USA",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Yasin Ayari",
+      "team": "Sweden",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Kai Havertz",
+      "team": "Germany",
+      "goals": 2,
+      "pens": 1
+    },
+    {
+      "name": "Abdulelah Al-Amri",
+      "team": "Saudi Arabia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Alexander Isak",
+      "team": "Sweden",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Amad Diallo",
+      "team": "Ivory Coast",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Boualem Khoukhi",
+      "team": "Qatar",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Connor Metcalfe",
+      "team": "Australia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Crysencio Summerville",
+      "team": "Netherlands",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Cyle Larin",
+      "team": "Canada",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Daichi Kamada",
+      "team": "Japan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Deniz Undav",
+      "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Emam Ashour",
+      "team": "Egypt",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Felix Nmecha",
+      "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Giovanni Reyna",
+      "team": "USA",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Hwang In-Beom",
+      "team": "South Korea",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ismael Saibari",
+      "team": "Morocco",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Jamal Musiala",
+      "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "John McGinn",
+      "team": "Scotland",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Jovo Lukić",
+      "team": "Bosnia & Herzegovina",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Julián Quiñones",
+      "team": "Mexico",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Keito Nakamura",
+      "team": "Japan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ladislav Krejcí",
+      "team": "Czechia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Livano Comenencia",
+      "team": "Curaçao",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mattias Svanberg",
+      "team": "Sweden",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mauricio",
+      "team": "Paraguay",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Maxi Araújo",
+      "team": "Uruguay",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mohammad Mohebbi",
+      "team": "Iran",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nathaniel Brown",
+      "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nestory Irankunda",
+      "team": "Australia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nico Schlotterbeck",
+      "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Oh Hyeon-Gyu",
+      "team": "South Korea",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Omar Rekik",
+      "team": "Tunisia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ramin Rezaeian",
+      "team": "Iran",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Raúl Jiménez",
+      "team": "Mexico",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Viktor Gyökeres",
+      "team": "Sweden",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Vinícius Júnior",
+      "team": "Brazil",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Virgil van Dijk",
+      "team": "Netherlands",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Breel Embolo",
+      "team": "Switzerland",
+      "goals": 1,
+      "pens": 1
+    }
+  ]
 }
