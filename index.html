@@ -88,7 +88,9 @@
     background:var(--surface);border:1px solid var(--line-strong);border-radius:999px;padding:3px;
     box-shadow:var(--shadow)}
   .theme-switch button{font:inherit;font-size:11px;font-weight:700;color:var(--muted);
-    background:none;border:none;border-radius:999px;padding:5px 10px;cursor:pointer;line-height:1}
+    background:none;border:none;border-radius:999px;padding:5px 10px;cursor:pointer;line-height:1;
+    display:inline-flex;align-items:center;gap:5px}
+  .theme-switch button svg{width:13px;height:13px;flex:0 0 auto}
   .theme-switch button[aria-pressed="true"]{background:var(--accent);color:#fff}
   .theme-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   @media(max-width:480px){ .theme-switch button{padding:5px 8px;font-size:10.5px} }
@@ -341,9 +343,9 @@
 <body>
 <div class="topbar-grad"></div>
 <div class="theme-switch" role="group" aria-label="Colour theme">
-  <button type="button" data-theme-set="light"  aria-pressed="true">Light</button>
-  <button type="button" data-theme-set="medium" aria-pressed="false">Medium</button>
-  <button type="button" data-theme-set="dark"   aria-pressed="false">Dark</button>
+  <button type="button" data-theme-set="light"  aria-pressed="true"  title="Light" aria-label="Light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+  <button type="button" data-theme-set="medium" aria-pressed="false" title="Medium" aria-label="Medium"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg></button>
+  <button type="button" data-theme-set="dark"   aria-pressed="false" title="Dark" aria-label="Dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
 </div>
 <div class="wrap">
   <header class="masthead">
