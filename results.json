@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T18:40:24.736Z",
+  "updated": "2026-06-17T20:49:22.836Z",
   "results": {
     "1": {
       "h": 2,
@@ -98,6 +98,11 @@
     },
     "20": {
       "h": 3,
+      "a": 1,
+      "status": "FT"
+    },
+    "21": {
+      "h": 1,
       "a": 1,
       "status": "FT"
     }
@@ -261,6 +266,12 @@
       "pens": 0
     },
     {
+      "name": "João Neves",
+      "team": "Portugal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "John McGinn",
       "team": "Scotland",
       "goals": 1,
@@ -389,6 +400,12 @@
     {
       "name": "Virgil van Dijk",
       "team": "Netherlands",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Yoane Wissa",
+      "team": "DR Congo",
       "goals": 1,
       "pens": 0
     },
