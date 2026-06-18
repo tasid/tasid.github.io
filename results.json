@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T03:49:35.139Z",
+  "updated": "2026-06-18T04:13:29.973Z",
   "results": {
     "1": {
       "h": 2,
@@ -115,6 +115,11 @@
       "h": 1,
       "a": 0,
       "status": "FT"
+    },
+    "24": {
+      "h": 1,
+      "a": 3,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -166,6 +171,12 @@
       "team": "Germany",
       "goals": 2,
       "pens": 1
+    },
+    {
+      "name": "Abbosbek Fayzullaev",
+      "team": "Uzbekistan",
+      "goals": 1,
+      "pens": 0
     },
     {
       "name": "Abdulelah Al-Amri",
@@ -240,6 +251,12 @@
       "pens": 0
     },
     {
+      "name": "Daniel Muñoz",
+      "team": "Colombia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Deniz Undav",
       "team": "Germany",
       "goals": 1,
@@ -284,6 +301,12 @@
     {
       "name": "Jamal Musiala",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Jáminton Campaz",
+      "team": "Colombia",
       "goals": 1,
       "pens": 0
     },
@@ -338,6 +361,12 @@
     {
       "name": "Livano Comenencia",
       "team": "Curaçao",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Luis Díaz",
+      "team": "Colombia",
       "goals": 1,
       "pens": 0
     },
