@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T15:51:10.193Z",
+  "updated": "2026-06-18T18:21:46.445Z",
   "results": {
     "1": {
       "h": 2,
@@ -119,6 +119,11 @@
     "24": {
       "h": 1,
       "a": 3,
+      "status": "FT"
+    },
+    "25": {
+      "h": 1,
+      "a": 1,
       "status": "FT"
     }
   },
@@ -401,6 +406,12 @@
       "pens": 0
     },
     {
+      "name": "Michal Sadílek",
+      "team": "Czechia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Mohammad Mohebbi",
       "team": "Iran",
       "goals": 1,
@@ -493,6 +504,12 @@
     {
       "name": "Marko Arnautovic",
       "team": "Austria",
+      "goals": 1,
+      "pens": 1
+    },
+    {
+      "name": "Teboho Mokoena",
+      "team": "South Africa",
       "goals": 1,
       "pens": 1
     }
