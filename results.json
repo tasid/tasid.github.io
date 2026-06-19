@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T20:03:49.701Z",
+  "updated": "2026-06-19T21:20:25.941Z",
   "results": {
     "1": {
       "h": 2,
@@ -140,6 +140,11 @@
       "h": 1,
       "a": 0,
       "status": "FT"
+    },
+    "29": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -219,6 +224,12 @@
     {
       "name": "Abdulelah Al-Amri",
       "team": "Saudi Arabia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Alex Freeman",
+      "team": "USA",
       "goals": 1,
       "pens": 0
     },
