@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T00:14:10.082Z",
+  "updated": "2026-06-19T05:25:34.074Z",
   "results": {
     "1": {
       "h": 2,
@@ -133,6 +133,11 @@
     },
     "27": {
       "h": 6,
+      "a": 0,
+      "status": "FT"
+    },
+    "28": {
+      "h": 1,
       "a": 0,
       "status": "FT"
     }
@@ -400,6 +405,12 @@
     {
       "name": "Luis Díaz",
       "team": "Colombia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Luis Romo",
+      "team": "Mexico",
       "goals": 1,
       "pens": 0
     },
