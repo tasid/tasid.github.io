@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T22:33:33.349Z",
+  "updated": "2026-06-19T00:14:10.082Z",
   "results": {
     "1": {
       "h": 2,
@@ -130,14 +130,31 @@
       "h": 4,
       "a": 1,
       "status": "FT"
+    },
+    "27": {
+      "h": 6,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
   "scorers": [
     {
+      "name": "Jonathan David",
+      "team": "Canada",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Lionel Messi",
       "team": "Argentina",
       "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Cyle Larin",
+      "team": "Canada",
+      "goals": 2,
       "pens": 0
     },
     {
@@ -251,12 +268,6 @@
     {
       "name": "Crysencio Summerville",
       "team": "Netherlands",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Cyle Larin",
-      "team": "Canada",
       "goals": 1,
       "pens": 0
     },
@@ -431,6 +442,12 @@
     {
       "name": "Mohammad Mohebbi",
       "team": "Iran",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nathan Saliba",
+      "team": "Canada",
       "goals": 1,
       "pens": 0
     },
