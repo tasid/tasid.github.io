@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T21:04:54.715Z",
+  "updated": "2026-06-20T22:21:39.803Z",
   "results": {
     "1": {
       "h": 2,
@@ -165,10 +165,21 @@
       "h": 5,
       "a": 1,
       "status": "FT"
+    },
+    "34": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
   "scorers": [
+    {
+      "name": "Deniz Undav",
+      "team": "Germany",
+      "goals": 3,
+      "pens": 0
+    },
     {
       "name": "Jonathan David",
       "team": "Canada",
@@ -350,12 +361,6 @@
       "pens": 0
     },
     {
-      "name": "Deniz Undav",
-      "team": "Germany",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Emam Ashour",
       "team": "Egypt",
       "goals": 1,
@@ -370,6 +375,12 @@
     {
       "name": "Felix Nmecha",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Franck Kessié",
+      "team": "Ivory Coast",
       "goals": 1,
       "pens": 0
     },
