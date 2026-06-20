@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T23:36:59.453Z",
+  "updated": "2026-06-20T01:50:49.266Z",
   "results": {
     "1": {
       "h": 2,
@@ -145,6 +145,11 @@
       "h": 2,
       "a": 0,
       "status": "FT"
+    },
+    "30": {
+      "h": 0,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -182,6 +187,12 @@
     {
       "name": "Folarin Balogun",
       "team": "USA",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Ismael Saibari",
+      "team": "Morocco",
       "goals": 2,
       "pens": 0
     },
@@ -338,12 +349,6 @@
     {
       "name": "Ibrahim Mbaye",
       "team": "Senegal",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Ismael Saibari",
-      "team": "Morocco",
       "goals": 1,
       "pens": 0
     },
