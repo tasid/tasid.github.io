@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T01:50:49.266Z",
+  "updated": "2026-06-20T06:11:50.460Z",
   "results": {
     "1": {
       "h": 2,
@@ -150,6 +150,16 @@
       "h": 0,
       "a": 1,
       "status": "FT"
+    },
+    "31": {
+      "h": 3,
+      "a": 0,
+      "status": "FT"
+    },
+    "32": {
+      "h": 0,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -205,6 +215,18 @@
     {
       "name": "Kylian Mbappé",
       "team": "France",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Matheus Cunha",
+      "team": "Brazil",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Vinícius Júnior",
+      "team": "Brazil",
       "goals": 2,
       "pens": 0
     },
@@ -443,6 +465,12 @@
       "pens": 0
     },
     {
+      "name": "Matías Galarza",
+      "team": "Paraguay",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Mattias Svanberg",
       "team": "Sweden",
       "goals": 1,
@@ -541,12 +569,6 @@
     {
       "name": "Viktor Gyökeres",
       "team": "Sweden",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Vinícius Júnior",
-      "team": "Brazil",
       "goals": 1,
       "pens": 0
     },
