@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T16:54:15.103Z",
+  "updated": "2026-06-21T18:15:06.190Z",
   "results": {
     "1": {
       "h": 2,
@@ -180,6 +180,11 @@
       "h": 0,
       "a": 4,
       "status": "FT"
+    },
+    "37": {
+      "h": 4,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -277,6 +282,12 @@
     {
       "name": "Matheus Cunha",
       "team": "Brazil",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Mikel Oyarzabal",
+      "team": "Spain",
       "goals": 2,
       "pens": 0
     },
@@ -475,6 +486,12 @@
     {
       "name": "Ladislav Krejcí",
       "team": "Czechia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Lamine Yamal",
+      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
