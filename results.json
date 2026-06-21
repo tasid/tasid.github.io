@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T02:05:17.714Z",
+  "updated": "2026-06-21T06:02:58.392Z",
   "results": {
     "1": {
       "h": 2,
@@ -175,6 +175,11 @@
       "h": 0,
       "a": 0,
       "status": "FT"
+    },
+    "36": {
+      "h": 0,
+      "a": 4,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -198,6 +203,12 @@
       "pens": 0
     },
     {
+      "name": "Ayase Ueda",
+      "team": "Japan",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Brian Brobbey",
       "team": "Netherlands",
       "goals": 2,
@@ -218,6 +229,12 @@
     {
       "name": "Cyle Larin",
       "team": "Canada",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Daichi Kamada",
+      "team": "Japan",
       "goals": 2,
       "pens": 0
     },
@@ -354,12 +371,6 @@
       "pens": 0
     },
     {
-      "name": "Daichi Kamada",
-      "team": "Japan",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Daniel Muñoz",
       "team": "Colombia",
       "goals": 1,
@@ -446,6 +457,12 @@
     {
       "name": "Julián Quiñones",
       "team": "Mexico",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Junya Ito",
+      "team": "Japan",
       "goals": 1,
       "pens": 0
     },
