@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T00:03:51.263Z",
+  "updated": "2026-06-22T04:30:27.209Z",
   "results": {
     "1": {
       "h": 2,
@@ -190,6 +190,16 @@
       "h": 0,
       "a": 0,
       "status": "FT"
+    },
+    "39": {
+      "h": 2,
+      "a": 2,
+      "status": "FT"
+    },
+    "40": {
+      "h": 1,
+      "a": 3,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -291,6 +301,12 @@
       "pens": 0
     },
     {
+      "name": "Maxi Araújo",
+      "team": "Uruguay",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Mikel Oyarzabal",
       "team": "Spain",
       "goals": 2,
@@ -329,6 +345,12 @@
     {
       "name": "Abdulelah Al-Amri",
       "team": "Saudi Arabia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Agustín Cano",
+      "team": "Uruguay",
       "goals": 1,
       "pens": 0
     },
@@ -411,6 +433,12 @@
       "pens": 0
     },
     {
+      "name": "Finn Surman",
+      "team": "New Zealand",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Franck Kessié",
       "team": "Ivory Coast",
       "goals": 1,
@@ -419,6 +447,12 @@
     {
       "name": "Giovanni Reyna",
       "team": "USA",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Hélio Varela",
+      "team": "Cape Verde",
       "goals": 1,
       "pens": 0
     },
@@ -489,6 +523,12 @@
       "pens": 0
     },
     {
+      "name": "Kevin Pina",
+      "team": "Cape Verde",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Ladislav Krejcí",
       "team": "Czechia",
       "goals": 1,
@@ -555,20 +595,26 @@
       "pens": 0
     },
     {
-      "name": "Maxi Araújo",
-      "team": "Uruguay",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Michal Sadílek",
       "team": "Czechia",
       "goals": 1,
       "pens": 0
     },
     {
+      "name": "Mohamed Salah",
+      "team": "Egypt",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Mohammad Mohebbi",
       "team": "Iran",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mostafa Zico",
+      "team": "Egypt",
       "goals": 1,
       "pens": 0
     },
@@ -635,6 +681,12 @@
     {
       "name": "Rubén Vargas",
       "team": "Switzerland",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Trézéguet",
+      "team": "Egypt",
       "goals": 1,
       "pens": 0
     },
