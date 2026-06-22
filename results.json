@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T16:00:56.822Z",
+  "updated": "2026-06-22T19:43:50.688Z",
   "results": {
     "1": {
       "h": 2,
@@ -200,10 +200,21 @@
       "h": 1,
       "a": 3,
       "status": "FT"
+    },
+    "41": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
   "scorers": [
+    {
+      "name": "Lionel Messi",
+      "team": "Argentina",
+      "goals": 5,
+      "pens": 0
+    },
     {
       "name": "Deniz Undav",
       "team": "Germany",
@@ -213,12 +224,6 @@
     {
       "name": "Jonathan David",
       "team": "Canada",
-      "goals": 3,
-      "pens": 0
-    },
-    {
-      "name": "Lionel Messi",
-      "team": "Argentina",
       "goals": 3,
       "pens": 0
     },
