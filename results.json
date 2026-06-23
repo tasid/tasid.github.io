@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T00:21:07.346Z",
+  "updated": "2026-06-23T02:53:37.019Z",
   "results": {
     "1": {
       "h": 2,
@@ -205,6 +205,16 @@
       "h": 2,
       "a": 0,
       "status": "FT"
+    },
+    "42": {
+      "h": 3,
+      "a": 0,
+      "status": "FT"
+    },
+    "43": {
+      "h": 3,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -213,6 +223,18 @@
       "name": "Lionel Messi",
       "team": "Argentina",
       "goals": 5,
+      "pens": 0
+    },
+    {
+      "name": "Erling Haaland",
+      "team": "Norway",
+      "goals": 4,
+      "pens": 0
+    },
+    {
+      "name": "Kylian Mbappé",
+      "team": "France",
+      "goals": 4,
       "pens": 0
     },
     {
@@ -270,12 +292,6 @@
       "pens": 0
     },
     {
-      "name": "Erling Haaland",
-      "team": "Norway",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Folarin Balogun",
       "team": "USA",
       "goals": 2,
@@ -288,14 +304,14 @@
       "pens": 0
     },
     {
-      "name": "Johan Manzambi",
-      "team": "Switzerland",
+      "name": "Ismaïla Sarr",
+      "team": "Senegal",
       "goals": 2,
       "pens": 0
     },
     {
-      "name": "Kylian Mbappé",
-      "team": "France",
+      "name": "Johan Manzambi",
+      "team": "Switzerland",
       "goals": 2,
       "pens": 0
     },
@@ -570,6 +586,12 @@
       "pens": 0
     },
     {
+      "name": "Marcus Holmgren Pedersen",
+      "team": "Norway",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Marcus Rashford",
       "team": "England",
       "goals": 1,
@@ -656,6 +678,12 @@
     {
       "name": "Omar Rekik",
       "team": "Tunisia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "France",
       "goals": 1,
       "pens": 0
     },
