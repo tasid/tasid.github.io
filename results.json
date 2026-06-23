@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T04:37:26.684Z",
+  "updated": "2026-06-23T08:19:12.352Z",
   "results": {
     "1": {
       "h": 2,
@@ -215,6 +215,11 @@
       "h": 3,
       "a": 2,
       "status": "FT"
+    },
+    "44": {
+      "h": 1,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -396,6 +401,12 @@
     {
       "name": "Amad Diallo",
       "team": "Ivory Coast",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Amine Gouiri",
+      "team": "Algeria",
       "goals": 1,
       "pens": 0
     },
@@ -646,6 +657,12 @@
       "pens": 0
     },
     {
+      "name": "Nadhir Benbouali",
+      "team": "Algeria",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Nathan Saliba",
       "team": "Canada",
       "goals": 1,
@@ -666,6 +683,12 @@
     {
       "name": "Nico Schlotterbeck",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nizar Al-Rashdan",
+      "team": "Jordan",
       "goals": 1,
       "pens": 0
     },
