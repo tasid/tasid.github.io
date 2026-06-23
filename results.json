@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T18:29:20.024Z",
+  "updated": "2026-06-23T19:54:10.382Z",
   "results": {
     "1": {
       "h": 2,
@@ -220,6 +220,11 @@
       "h": 1,
       "a": 2,
       "status": "FT"
+    },
+    "45": {
+      "h": 5,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -269,6 +274,12 @@
     {
       "name": "Cody Gakpo",
       "team": "Netherlands",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "team": "Portugal",
       "goals": 2,
       "pens": 0
     },
@@ -693,6 +704,12 @@
       "pens": 0
     },
     {
+      "name": "Nuno Mendes",
+      "team": "Portugal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Oh Hyeon-Gyu",
       "team": "South Korea",
       "goals": 1,
@@ -713,6 +730,12 @@
     {
       "name": "Petar Musa",
       "team": "Croatia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Rafael Leão",
+      "team": "Portugal",
       "goals": 1,
       "pens": 0
     },
