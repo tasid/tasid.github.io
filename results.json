@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T19:46:12.524Z",
+  "updated": "2026-06-24T21:17:01.274Z",
   "results": {
     "1": {
       "h": 2,
@@ -240,6 +240,16 @@
       "h": 1,
       "a": 0,
       "status": "FT"
+    },
+    "49": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
+    },
+    "50": {
+      "h": 3,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -265,6 +275,12 @@
     {
       "name": "Deniz Undav",
       "team": "Germany",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Johan Manzambi",
+      "team": "Switzerland",
       "goals": 3,
       "pens": 0
     },
@@ -329,6 +345,12 @@
       "pens": 0
     },
     {
+      "name": "Ermin Mahmic",
+      "team": "Bosnia & Herzegovina",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Folarin Balogun",
       "team": "USA",
       "goals": 2,
@@ -347,12 +369,6 @@
       "pens": 0
     },
     {
-      "name": "Johan Manzambi",
-      "team": "Switzerland",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Matheus Cunha",
       "team": "Brazil",
       "goals": 2,
@@ -367,6 +383,12 @@
     {
       "name": "Mikel Oyarzabal",
       "team": "Spain",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Rubén Vargas",
+      "team": "Switzerland",
       "goals": 2,
       "pens": 0
     },
@@ -485,12 +507,6 @@
       "pens": 0
     },
     {
-      "name": "Ermin Mahmic",
-      "team": "Bosnia & Herzegovina",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Felix Nmecha",
       "team": "Germany",
       "goals": 1,
@@ -511,6 +527,12 @@
     {
       "name": "Giovanni Reyna",
       "team": "USA",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Hassan Al-Haydos",
+      "team": "Qatar",
       "goals": 1,
       "pens": 0
     },
@@ -583,6 +605,12 @@
     {
       "name": "Keito Nakamura",
       "team": "Japan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Kerim Alajbegovic",
+      "team": "Bosnia & Herzegovina",
       "goals": 1,
       "pens": 0
     },
@@ -755,6 +783,12 @@
       "pens": 0
     },
     {
+      "name": "Promise David",
+      "team": "Canada",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Rafael Leão",
       "team": "Portugal",
       "goals": 1,
@@ -775,12 +809,6 @@
     {
       "name": "Romano Schmid",
       "team": "Austria",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Rubén Vargas",
-      "team": "Switzerland",
       "goals": 1,
       "pens": 0
     },
