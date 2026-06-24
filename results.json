@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T01:22:25.414Z",
+  "updated": "2026-06-24T05:14:44.873Z",
   "results": {
     "1": {
       "h": 2,
@@ -235,6 +235,11 @@
       "h": 0,
       "a": 1,
       "status": "FT"
+    },
+    "48": {
+      "h": 1,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -308,6 +313,12 @@
     {
       "name": "Daichi Kamada",
       "team": "Japan",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Daniel Muñoz",
+      "team": "Colombia",
       "goals": 2,
       "pens": 0
     },
@@ -464,12 +475,6 @@
     {
       "name": "Connor Metcalfe",
       "team": "Australia",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Daniel Muñoz",
-      "team": "Colombia",
       "goals": 1,
       "pens": 0
     },
