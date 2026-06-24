@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T23:20:37.486Z",
+  "updated": "2026-06-24T01:22:25.414Z",
   "results": {
     "1": {
       "h": 2,
@@ -230,6 +230,11 @@
       "h": 0,
       "a": 0,
       "status": "FT"
+    },
+    "47": {
+      "h": 0,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -423,6 +428,12 @@
     {
       "name": "Amine Gouiri",
       "team": "Algeria",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ante Budimir",
+      "team": "Croatia",
       "goals": 1,
       "pens": 0
     },
