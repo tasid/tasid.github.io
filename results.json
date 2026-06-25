@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T21:59:05.189Z",
+  "updated": "2026-06-25T22:45:16.372Z",
   "results": {
     "1": {
       "h": 2,
@@ -270,6 +270,16 @@
       "h": 1,
       "a": 0,
       "status": "FT"
+    },
+    "55": {
+      "h": 0,
+      "a": 2,
+      "status": "FT"
+    },
+    "56": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -420,6 +430,12 @@
     {
       "name": "Mikel Oyarzabal",
       "team": "Spain",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Nicolas Pépé",
+      "team": "Ivory Coast",
       "goals": 2,
       "pens": 0
     },
@@ -580,6 +596,12 @@
       "pens": 0
     },
     {
+      "name": "Gonzalo Plata",
+      "team": "Ecuador",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Hassan Al-Haydos",
       "team": "Qatar",
       "goals": 1,
@@ -678,6 +700,12 @@
     {
       "name": "Leo Østigard",
       "team": "Norway",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Leroy Sané",
+      "team": "Germany",
       "goals": 1,
       "pens": 0
     },
@@ -792,6 +820,12 @@
     {
       "name": "Nico Schlotterbeck",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Nilson Angulo",
+      "team": "Ecuador",
       "goals": 1,
       "pens": 0
     },
