@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T23:59:14.625Z",
+  "updated": "2026-06-25T00:53:54.631Z",
   "results": {
     "1": {
       "h": 2,
@@ -250,6 +250,16 @@
       "h": 3,
       "a": 1,
       "status": "FT"
+    },
+    "51": {
+      "h": 0,
+      "a": 3,
+      "status": "FT"
+    },
+    "52": {
+      "h": 4,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -273,8 +283,20 @@
       "pens": 0
     },
     {
+      "name": "Vinícius Júnior",
+      "team": "Brazil",
+      "goals": 4,
+      "pens": 0
+    },
+    {
       "name": "Deniz Undav",
       "team": "Germany",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Ismael Saibari",
+      "team": "Morocco",
       "goals": 3,
       "pens": 0
     },
@@ -287,6 +309,12 @@
     {
       "name": "Jonathan David",
       "team": "Canada",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Matheus Cunha",
+      "team": "Brazil",
       "goals": 3,
       "pens": 0
     },
@@ -357,20 +385,8 @@
       "pens": 0
     },
     {
-      "name": "Ismael Saibari",
-      "team": "Morocco",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Ismaïla Sarr",
       "team": "Senegal",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Matheus Cunha",
-      "team": "Brazil",
       "goals": 2,
       "pens": 0
     },
@@ -389,12 +405,6 @@
     {
       "name": "Rubén Vargas",
       "team": "Switzerland",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Vinícius Júnior",
-      "team": "Brazil",
       "goals": 2,
       "pens": 0
     },
@@ -425,6 +435,12 @@
     {
       "name": "Abdulelah Al-Amri",
       "team": "Saudi Arabia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Achraf Hakimi",
+      "team": "Morocco",
       "goals": 1,
       "pens": 0
     },
@@ -521,6 +537,12 @@
     {
       "name": "Franck Kessié",
       "team": "Ivory Coast",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Gessime Yassine",
+      "team": "Morocco",
       "goals": 1,
       "pens": 0
     },
@@ -813,6 +835,12 @@
       "pens": 0
     },
     {
+      "name": "Soufiane Rahimi",
+      "team": "Morocco",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Trézéguet",
       "team": "Egypt",
       "goals": 1,
@@ -827,6 +855,12 @@
     {
       "name": "Virgil van Dijk",
       "team": "Netherlands",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Wilson Isidor",
+      "team": "Haiti",
       "goals": 1,
       "pens": 0
     },
