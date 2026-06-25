@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T12:37:44.050Z",
+  "updated": "2026-06-25T15:32:13.283Z",
   "results": {
     "1": {
       "h": 2,
@@ -272,7 +272,12 @@
       "status": "FT"
     }
   },
-  "teams": {},
+  "teams": {
+    "73": {
+      "h": "South Africa",
+      "a": "Canada"
+    }
+  },
   "scorers": [
     {
       "name": "Lionel Messi",
