@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T00:53:54.631Z",
+  "updated": "2026-06-25T03:48:17.892Z",
   "results": {
     "1": {
       "h": 2,
@@ -260,6 +260,16 @@
       "h": 4,
       "a": 2,
       "status": "FT"
+    },
+    "53": {
+      "h": 0,
+      "a": 3,
+      "status": "FT"
+    },
+    "54": {
+      "h": 1,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {},
@@ -391,6 +401,12 @@
       "pens": 0
     },
     {
+      "name": "Julián Quiñones",
+      "team": "Mexico",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Maxi Araújo",
       "team": "Uruguay",
       "goals": 2,
@@ -465,6 +481,12 @@
     {
       "name": "Ali Olwan",
       "team": "Jordan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Álvaro Fidalgo",
+      "team": "Mexico",
       "goals": 1,
       "pens": 0
     },
@@ -613,12 +635,6 @@
       "pens": 0
     },
     {
-      "name": "Julián Quiñones",
-      "team": "Mexico",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Junya Ito",
       "team": "Japan",
       "goals": 1,
@@ -693,6 +709,12 @@
     {
       "name": "Martin Baturina",
       "team": "Croatia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mateo Chávez",
+      "team": "Mexico",
       "goals": 1,
       "pens": 0
     },
@@ -837,6 +859,12 @@
     {
       "name": "Soufiane Rahimi",
       "team": "Morocco",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Thapelo Maseko",
+      "team": "South Africa",
       "goals": 1,
       "pens": 0
     },
