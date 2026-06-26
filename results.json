@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T20:55:48.194Z",
+  "updated": "2026-06-26T22:05:34.311Z",
   "results": {
     "1": {
       "h": 2,
@@ -300,6 +300,16 @@
       "h": 0,
       "a": 0,
       "status": "FT"
+    },
+    "61": {
+      "h": 1,
+      "a": 4,
+      "status": "FT"
+    },
+    "62": {
+      "h": 5,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -336,6 +346,12 @@
       "pens": 0
     },
     {
+      "name": "Ousmane Dembélé",
+      "team": "France",
+      "goals": 4,
+      "pens": 0
+    },
+    {
       "name": "Vinícius Júnior",
       "team": "Brazil",
       "goals": 4,
@@ -356,6 +372,12 @@
     {
       "name": "Ismael Saibari",
       "team": "Morocco",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Ismaïla Sarr",
+      "team": "Senegal",
       "goals": 3,
       "pens": 0
     },
@@ -444,12 +466,6 @@
       "pens": 0
     },
     {
-      "name": "Ismaïla Sarr",
-      "team": "Senegal",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Julián Quiñones",
       "team": "Mexico",
       "goals": 2,
@@ -470,6 +486,12 @@
     {
       "name": "Nicolas Pépé",
       "team": "Ivory Coast",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Pape Gueye",
+      "team": "Senegal",
       "goals": 2,
       "pens": 0
     },
@@ -612,6 +634,12 @@
       "pens": 0
     },
     {
+      "name": "Désiré Doué",
+      "team": "France",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Emam Ashour",
       "team": "Egypt",
       "goals": 1,
@@ -654,6 +682,12 @@
       "pens": 0
     },
     {
+      "name": "Habib Diarra",
+      "team": "Senegal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Hassan Al-Haydos",
       "team": "Qatar",
       "goals": 1,
@@ -679,6 +713,12 @@
     },
     {
       "name": "Ibrahim Mbaye",
+      "team": "Senegal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Iliman Ndiaye",
       "team": "Senegal",
       "goals": 1,
       "pens": 0
@@ -924,12 +964,6 @@
       "pens": 0
     },
     {
-      "name": "Ousmane Dembélé",
-      "team": "France",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Petar Musa",
       "team": "Croatia",
       "goals": 1,
@@ -980,6 +1014,12 @@
     {
       "name": "Thapelo Maseko",
       "team": "South Africa",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Thelo Aasgaard",
+      "team": "Norway",
       "goals": 1,
       "pens": 0
     },
