@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T03:03:36.970Z",
+  "updated": "2026-06-26T04:37:43.817Z",
   "results": {
     "1": {
       "h": 2,
@@ -290,6 +290,16 @@
       "h": 1,
       "a": 3,
       "status": "FT"
+    },
+    "59": {
+      "h": 3,
+      "a": 2,
+      "status": "FT"
+    },
+    "60": {
+      "h": 0,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -546,8 +556,26 @@
       "pens": 0
     },
     {
+      "name": "Arda Güler",
+      "team": "Türkiye",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Auston Trusty",
+      "team": "USA",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Aymen Hussein",
       "team": "Iraq",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Baris Alper Yilmaz",
+      "team": "Türkiye",
       "goals": 1,
       "pens": 0
     },
@@ -692,6 +720,12 @@
     {
       "name": "Junya Ito",
       "team": "Japan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Kaan Ayhan",
+      "team": "Türkiye",
       "goals": 1,
       "pens": 0
     },
@@ -920,6 +954,12 @@
     {
       "name": "Romano Schmid",
       "team": "Austria",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Sebastian Berhalter",
+      "team": "USA",
       "goals": 1,
       "pens": 0
     },
