@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T00:03:57.370Z",
+  "updated": "2026-06-26T03:03:36.970Z",
   "results": {
     "1": {
       "h": 2,
@@ -280,6 +280,16 @@
       "h": 2,
       "a": 1,
       "status": "FT"
+    },
+    "57": {
+      "h": 1,
+      "a": 1,
+      "status": "FT"
+    },
+    "58": {
+      "h": 1,
+      "a": 3,
+      "status": "FT"
     }
   },
   "teams": {
@@ -314,6 +324,12 @@
       "pens": 0
     },
     {
+      "name": "Brian Brobbey",
+      "team": "Netherlands",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Deniz Undav",
       "team": "Germany",
       "goals": 3,
@@ -344,14 +360,14 @@
       "pens": 0
     },
     {
-      "name": "Ayase Ueda",
-      "team": "Japan",
+      "name": "Anthony Elanga",
+      "team": "Sweden",
       "goals": 2,
       "pens": 0
     },
     {
-      "name": "Brian Brobbey",
-      "team": "Netherlands",
+      "name": "Ayase Ueda",
+      "team": "Japan",
       "goals": 2,
       "pens": 0
     },
@@ -530,12 +546,6 @@
       "pens": 0
     },
     {
-      "name": "Anthony Elanga",
-      "team": "Sweden",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Aymen Hussein",
       "team": "Iraq",
       "goals": 1,
@@ -556,6 +566,12 @@
     {
       "name": "Connor Metcalfe",
       "team": "Australia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Daizen Maeda",
+      "team": "Japan",
       "goals": 1,
       "pens": 0
     },
@@ -608,6 +624,12 @@
       "pens": 0
     },
     {
+      "name": "Hazem Mastouri",
+      "team": "Tunisia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Hélio Varela",
       "team": "Cape Verde",
       "goals": 1,
@@ -634,6 +656,12 @@
     {
       "name": "Jáminton Campaz",
       "team": "Colombia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Jan Paul van Hecke",
+      "team": "Netherlands",
       "goals": 1,
       "pens": 0
     },
