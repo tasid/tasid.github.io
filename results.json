@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T22:55:10.257Z",
+  "updated": "2026-06-27T23:55:24.622Z",
   "results": {
     "1": {
       "h": 2,
@@ -330,6 +330,16 @@
       "h": 1,
       "a": 5,
       "status": "FT"
+    },
+    "67": {
+      "h": 0,
+      "a": 2,
+      "status": "FT"
+    },
+    "68": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -426,6 +436,12 @@
       "pens": 0
     },
     {
+      "name": "Harry Kane",
+      "team": "England",
+      "goals": 3,
+      "pens": 1
+    },
+    {
       "name": "Anthony Elanga",
       "team": "Sweden",
       "goals": 2,
@@ -486,6 +502,12 @@
       "pens": 0
     },
     {
+      "name": "Jude Bellingham",
+      "team": "England",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Julián Quiñones",
       "team": "Mexico",
       "goals": 2,
@@ -538,12 +560,6 @@
       "team": "Sweden",
       "goals": 2,
       "pens": 0
-    },
-    {
-      "name": "Harry Kane",
-      "team": "England",
-      "goals": 2,
-      "pens": 1
     },
     {
       "name": "Kai Havertz",
@@ -678,6 +694,12 @@
       "pens": 0
     },
     {
+      "name": "Derrick Luckassen",
+      "team": "Ghana",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Désiré Doué",
       "team": "France",
       "goals": 1,
@@ -800,12 +822,6 @@
     {
       "name": "Jovo Lukić",
       "team": "Bosnia & Herzegovina",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Jude Bellingham",
-      "team": "England",
       "goals": 1,
       "pens": 0
     },
@@ -990,6 +1006,12 @@
       "pens": 0
     },
     {
+      "name": "Nikola Vlasic",
+      "team": "Croatia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Nilson Angulo",
       "team": "Ecuador",
       "goals": 1,
@@ -1021,6 +1043,12 @@
     },
     {
       "name": "Petar Musa",
+      "team": "Croatia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Petar Sucic",
       "team": "Croatia",
       "goals": 1,
       "pens": 0
