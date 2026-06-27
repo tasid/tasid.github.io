@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T01:27:08.457Z",
+  "updated": "2026-06-27T05:11:10.943Z",
   "results": {
     "1": {
       "h": 2,
@@ -310,6 +310,26 @@
       "h": 5,
       "a": 0,
       "status": "FT"
+    },
+    "63": {
+      "h": 0,
+      "a": 0,
+      "status": "FT"
+    },
+    "64": {
+      "h": 0,
+      "a": 1,
+      "status": "FT"
+    },
+    "65": {
+      "h": 1,
+      "a": 1,
+      "status": "FT"
+    },
+    "66": {
+      "h": 1,
+      "a": 5,
+      "status": "FT"
     }
   },
   "teams": {
@@ -366,6 +386,12 @@
     {
       "name": "Deniz Undav",
       "team": "Germany",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Elijah Just",
+      "team": "New Zealand",
       "goals": 3,
       "pens": 0
     },
@@ -448,12 +474,6 @@
       "pens": 0
     },
     {
-      "name": "Elijah Just",
-      "team": "New Zealand",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Ermin Mahmic",
       "team": "Bosnia & Herzegovina",
       "goals": 2,
@@ -468,6 +488,12 @@
     {
       "name": "Julián Quiñones",
       "team": "Mexico",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Leandro Trossard",
+      "team": "Belgium",
       "goals": 2,
       "pens": 0
     },
@@ -492,6 +518,12 @@
     {
       "name": "Pape Gueye",
       "team": "Senegal",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Ramin Rezaeian",
+      "team": "Iran",
       "goals": 2,
       "pens": 0
     },
@@ -544,6 +576,12 @@
       "pens": 0
     },
     {
+      "name": "Álex Baena",
+      "team": "Spain",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Alex Freeman",
       "team": "USA",
       "goals": 1,
@@ -552,6 +590,12 @@
     {
       "name": "Alexander Isak",
       "team": "Sweden",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Alexis Saelemaekers",
+      "team": "Belgium",
       "goals": 1,
       "pens": 0
     },
@@ -790,6 +834,12 @@
       "pens": 0
     },
     {
+      "name": "Kevin De Bruyne",
+      "team": "Belgium",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Kevin Pina",
       "team": "Cape Verde",
       "goals": 1,
@@ -834,6 +884,12 @@
     {
       "name": "Luis Romo",
       "team": "Mexico",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mahmoud Saber",
+      "team": "Egypt",
       "goals": 1,
       "pens": 0
     },
@@ -982,12 +1038,6 @@
       "pens": 0
     },
     {
-      "name": "Ramin Rezaeian",
-      "team": "Iran",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Raúl Jiménez",
       "team": "Mexico",
       "goals": 1,
@@ -996,6 +1046,12 @@
     {
       "name": "Romano Schmid",
       "team": "Austria",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Romelu Lukaku",
+      "team": "Belgium",
       "goals": 1,
       "pens": 0
     },
