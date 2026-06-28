@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T23:55:24.622Z",
+  "updated": "2026-06-28T02:40:23.837Z",
   "results": {
     "1": {
       "h": 2,
@@ -340,6 +340,16 @@
       "h": 2,
       "a": 1,
       "status": "FT"
+    },
+    "69": {
+      "h": 0,
+      "a": 0,
+      "status": "FT"
+    },
+    "70": {
+      "h": 3,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -438,6 +448,12 @@
     {
       "name": "Harry Kane",
       "team": "England",
+      "goals": 3,
+      "pens": 1
+    },
+    {
+      "name": "Yoane Wissa",
+      "team": "DR Congo",
       "goals": 3,
       "pens": 1
     },
@@ -706,6 +722,12 @@
       "pens": 0
     },
     {
+      "name": "Eldor Shomurodov",
+      "team": "Uzbekistan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Emam Ashour",
       "team": "Egypt",
       "goals": 1,
@@ -720,6 +742,12 @@
     {
       "name": "Finn Surman",
       "team": "New Zealand",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Fiston Mayele",
+      "team": "DR Congo",
       "goals": 1,
       "pens": 0
     },
@@ -1128,12 +1156,6 @@
     {
       "name": "Wilson Isidor",
       "team": "Haiti",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Yoane Wissa",
-      "team": "DR Congo",
       "goals": 1,
       "pens": 0
     },
