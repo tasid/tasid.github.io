@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T20:06:41.116Z",
+  "updated": "2026-06-28T21:17:58.090Z",
   "results": {
     "1": {
       "h": 2,
@@ -359,6 +359,11 @@
     "72": {
       "h": 1,
       "a": 3,
+      "status": "FT"
+    },
+    "73": {
+      "h": 0,
+      "a": 1,
       "status": "FT"
     }
   },
@@ -1224,6 +1229,12 @@
     {
       "name": "Soufiane Rahimi",
       "team": "Morocco",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Stephan Eustáquio",
+      "team": "Canada",
       "goals": 1,
       "pens": 0
     },
