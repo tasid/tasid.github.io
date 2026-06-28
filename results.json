@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T06:45:56.640Z",
+  "updated": "2026-06-28T09:53:48.736Z",
   "results": {
     "1": {
       "h": 2,
@@ -367,6 +367,10 @@
       "h": "South Africa",
       "a": "Canada"
     },
+    "74": {
+      "h": "Germany",
+      "a": "Paraguay"
+    },
     "75": {
       "h": "Netherlands",
       "a": "Morocco"
@@ -374,6 +378,54 @@
     "76": {
       "h": "Brazil",
       "a": "Japan"
+    },
+    "77": {
+      "h": "France",
+      "a": "Sweden"
+    },
+    "78": {
+      "h": "Ivory Coast",
+      "a": "Norway"
+    },
+    "79": {
+      "h": "Mexico",
+      "a": "Ecuador"
+    },
+    "80": {
+      "h": "England",
+      "a": "DR Congo"
+    },
+    "81": {
+      "h": "USA",
+      "a": "Bosnia & Herzegovina"
+    },
+    "82": {
+      "h": "Belgium",
+      "a": "Senegal"
+    },
+    "83": {
+      "h": "Portugal",
+      "a": "Croatia"
+    },
+    "84": {
+      "h": "Spain",
+      "a": "Austria"
+    },
+    "85": {
+      "h": "Switzerland",
+      "a": "Algeria"
+    },
+    "86": {
+      "h": "Argentina",
+      "a": "Cape Verde"
+    },
+    "87": {
+      "h": "Colombia",
+      "a": "Ghana"
+    },
+    "88": {
+      "h": "Australia",
+      "a": "Egypt"
     }
   },
   "scorers": [
