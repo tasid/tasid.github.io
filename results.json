@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T22:46:46.669Z",
+  "updated": "2026-06-29T23:54:36.457Z",
   "results": {
     "1": {
       "h": 2,
@@ -366,6 +366,15 @@
       "a": 1,
       "status": "FT"
     },
+    "74": {
+      "h": 1,
+      "a": 1,
+      "status": "FT",
+      "p": [
+        3,
+        4
+      ]
+    },
     "76": {
       "h": 2,
       "a": 1,
@@ -524,6 +533,12 @@
       "pens": 1
     },
     {
+      "name": "Kai Havertz",
+      "team": "Germany",
+      "goals": 3,
+      "pens": 1
+    },
+    {
       "name": "Yoane Wissa",
       "team": "DR Congo",
       "goals": 3,
@@ -654,12 +669,6 @@
       "team": "Sweden",
       "goals": 2,
       "pens": 0
-    },
-    {
-      "name": "Kai Havertz",
-      "team": "Germany",
-      "goals": 2,
-      "pens": 1
     },
     {
       "name": "Marko Arnautovic",
@@ -952,6 +961,12 @@
     {
       "name": "Jovo Lukić",
       "team": "Bosnia & Herzegovina",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Julio Enciso",
+      "team": "Paraguay",
       "goals": 1,
       "pens": 0
     },
