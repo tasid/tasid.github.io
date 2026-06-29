@@ -339,7 +339,7 @@
   /* Knockout bracket — two-sided, converging to the Final */
   .bracket{display:flex;flex-direction:row;align-items:stretch;gap:5px;overflow-x:auto;padding:6px 2px 10px;-webkit-overflow-scrolling:touch}
   .bhalf{display:flex;flex-direction:row;gap:5px;flex:1 1 auto;min-width:0}
-  .bcenter{display:flex;align-items:center;flex:0 0 auto}
+  .bcenter{display:flex;flex:0 0 auto}
   .bround{display:flex;flex-direction:column;min-width:104px;flex:1 1 0}
   .bcenter .bround{min-width:116px}
   .bround-title{font-size:9px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
@@ -1128,7 +1128,7 @@ function bMatchHTML(m, mirror){
   };
   const pens = m.pens ? `<div class="bpens">pens ${m.pens[0]}–${m.pens[1]}</div>` : "";
   return `<div class="bmatch${mirror?" mirror":""}">`+
-    `<div class="bm-head"><span class="bm-date">${dateStr}</span><span class="bm-city">${m.city}</span>${pill}</div>`+
+    `<div class="bm-head"><span class="bm-date">${dateStr}</span>${pill}</div>`+
     `${side(m.t1,m.slot1,1)}${side(m.t2,m.slot2,2)}${pens}</div>`;
 }
 function bColumnHTML(stage, nums, mirror){
