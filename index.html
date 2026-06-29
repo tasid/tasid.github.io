@@ -336,32 +336,54 @@
   /* Penalty annotation in scores */
   .pens{font-size:11px;color:var(--faint);font-weight:700;font-variant-numeric:tabular-nums}
 
-  /* Knockout bracket */
-  .bracket{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
-  .bround{display:flex;flex-direction:column;min-width:158px;flex:0 0 auto}
-  .bround-title{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--paper);background:var(--rc,var(--accent));margin-bottom:10px;text-align:center;
-    padding:5px 8px;border-radius:999px;box-shadow:0 2px 8px color-mix(in srgb,var(--rc,var(--accent)) 38%,transparent)}
-  .bround-matches{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:8px}
-  .bmatch{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--rc,var(--accent));
-    border-radius:10px;box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .15s,transform .15s}
+  /* Knockout bracket — two-sided, converging to the Final */
+  .bracket{display:flex;flex-direction:row;align-items:stretch;gap:5px;overflow-x:auto;padding:6px 2px 10px;-webkit-overflow-scrolling:touch}
+  .bhalf{display:flex;flex-direction:row;gap:5px;flex:1 1 auto;min-width:0}
+  .bcenter{display:flex;align-items:center;flex:0 0 auto}
+  .bround{display:flex;flex-direction:column;min-width:104px;flex:1 1 0}
+  .bcenter .bround{min-width:116px}
+  .bround-title{font-size:9px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--paper);background:var(--rc,var(--accent));margin-bottom:6px;text-align:center;
+    padding:3px 6px;border-radius:999px;box-shadow:0 2px 8px color-mix(in srgb,var(--rc,var(--accent)) 38%,transparent)}
+  .bround-matches{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:5px}
+  .bcenter .bround-matches{justify-content:center}
+  .bmatch{background:var(--surface);border:1px solid var(--line);
+    border-radius:8px;box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .15s,transform .15s}
   .bmatch:hover{box-shadow:0 2px 6px rgba(20,20,30,.06),0 8px 22px color-mix(in srgb,var(--rc,var(--accent)) 26%,transparent);transform:translateY(-1px)}
-  .bteam{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;font-size:12.5px;letter-spacing:-.01em}
+  .bm-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;padding:2px 5px;font-size:8px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.03em;color:var(--paper);background:var(--rc,var(--accent))}
+  .bm-city{opacity:.85;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+  .bm-pill{margin-top:1px;background:rgba(255,255,255,.28);padding:0 4px;border-radius:999px}
+  .bm-pill.live{background:var(--live,#e23744)}
+  .bteam{display:flex;align-items:stretch;gap:5px;padding:3px 6px;font-size:11px;letter-spacing:-.01em}
   .bteam + .bteam{border-top:1px solid var(--line)}
-  .bteam .bn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
-  .bteam .bg{font-variant-numeric:tabular-nums;font-weight:800;font-size:12.5px}
-  .bteam.win{font-weight:800;background:linear-gradient(90deg,color-mix(in srgb,var(--rc,var(--accent)) 15%,transparent),transparent 62%)}
-  .bteam.win .bn{color:var(--rc,var(--grass))}
+  .bbar{width:4px;flex:0 0 4px;border-radius:2px;min-height:15px}
+  .binfo{display:flex;flex-direction:column;justify-content:center;min-width:0;flex:1;line-height:1.1}
+  .bcode{font-weight:800;letter-spacing:.02em;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bcode.slot{font-style:italic;font-weight:600;color:var(--faint);font-size:10px}
+  .bfull{font-size:8px;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .borigin{font-size:7.5px;color:var(--faint);font-weight:800;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+  .bg{font-variant-numeric:tabular-nums;font-weight:800;font-size:12px;align-self:center}
+  .bteam.win{background:linear-gradient(90deg,color-mix(in srgb,var(--rc,var(--accent)) 14%,transparent),transparent 70%)}
+  .bteam.win .bcode{color:var(--rc,var(--grass))}
   .bteam.win .bg{color:var(--rc,var(--accent))}
-  .bteam.lose{color:var(--muted)}
-  .bteam.lose .bn{font-weight:600}
-  .bteam.slot .bn{color:var(--faint);font-style:italic;font-weight:600;font-size:11.5px}
-  .bpens{text-align:center;font-size:10px;color:var(--faint);font-weight:700;padding:2px 0 4px;background:var(--paper)}
-  .bfinal .bmatch{border:2px solid var(--gold);border-left-width:4px;
+  .bteam.lose{opacity:.6}
+  .bpens{text-align:center;font-size:9px;color:var(--faint);font-weight:700;padding:1px 0 3px;background:var(--paper)}
+  /* right half: mirror the cards so colour bars sit on the outer edge */
+  .bmatch.mirror .bteam{flex-direction:row-reverse}
+  .bmatch.mirror .binfo{align-items:flex-end;text-align:right}
+  .bfinal .bmatch{border:2px solid var(--gold);
     box-shadow:0 0 0 3px var(--gold-soft),0 6px 20px color-mix(in srgb,var(--gold) 38%,transparent)}
-  .bfinal .bteam{padding:8px 11px;font-size:13.5px}
-  .bthird{margin-top:18px;max-width:220px}
+  .bfinal .bteam{padding:4px 7px;font-size:12px}
+  .bthird{margin-top:14px;max-width:240px}
   .bthird h3{font-size:13px;font-weight:800;margin:0 2px 6px}
+  @media (max-width:760px){
+    .bracket{flex-direction:column;overflow-x:hidden;gap:14px}
+    .bhalf{overflow-x:auto;flex:0 0 auto;padding-bottom:4px}
+    .bcenter{justify-content:center}
+    .bmatch.mirror .bteam{flex-direction:row}
+    .bmatch.mirror .binfo{align-items:flex-start;text-align:left}
+  }
 
   /* Top scorers */
   .scorer-card{max-width:540px}
@@ -549,6 +571,34 @@ function flagHTML(name){
   const c=TEAM_COLORS[name];
   if(!c) return "";
   return `<span class="flag" style="--fg:linear-gradient(135deg,${c[0]} 0 50%,${c[1]} 50% 100%)" aria-hidden="true"></span>`;
+}
+
+/* ---------- Bracket identity helpers (3-letter codes + colour bars, no flag emoji) ---------- */
+const CODE = {
+  "Mexico":"MEX","South Africa":"RSA","South Korea":"KOR","Czechia":"CZE","Canada":"CAN",
+  "Bosnia & Herzegovina":"BIH","Qatar":"QAT","Switzerland":"SUI","Brazil":"BRA","Morocco":"MAR",
+  "Haiti":"HAI","Scotland":"SCO","USA":"USA","Paraguay":"PAR","Australia":"AUS","Türkiye":"TUR",
+  "Germany":"GER","Curaçao":"CUW","Ivory Coast":"CIV","Ecuador":"ECU","Netherlands":"NED",
+  "Japan":"JPN","Sweden":"SWE","Tunisia":"TUN","Belgium":"BEL","Egypt":"EGY","Iran":"IRN",
+  "New Zealand":"NZL","Spain":"ESP","Cape Verde":"CPV","Saudi Arabia":"KSA","Uruguay":"URU",
+  "France":"FRA","Senegal":"SEN","Iraq":"IRQ","Norway":"NOR","Argentina":"ARG","Algeria":"ALG",
+  "Austria":"AUT","Jordan":"JOR","Portugal":"POR","DR Congo":"COD","Uzbekistan":"UZB",
+  "Colombia":"COL","England":"ENG","Croatia":"CRO","Ghana":"GHA","Panama":"PAN"
+};
+function code(name){ return CODE[name] || name.slice(0,3).toUpperCase(); }
+function barStyle(name){
+  const c=TEAM_COLORS[name];
+  return c ? `background:linear-gradient(180deg,${c[0]} 0 50%,${c[1]} 50% 100%)` : `background:var(--line)`;
+}
+/* friendly "where they came from" text from a bracket slot label */
+function originLabel(slot){
+  if(!slot) return "";
+  let r;
+  if(r=/^Winner ([A-L])$/.exec(slot))    return "Winners "+r[1];
+  if(r=/^Runner-up ([A-L])$/.exec(slot)) return "Runners-up "+r[1];
+  if(/^Best 3rd/.test(slot))             return "Best 3rd";
+  if(r=/^(?:Winner|Loser) (\d+)$/.exec(slot)) return "via M"+r[1];
+  return slot;
 }
 /* one team's chunk inside a schedule row; side = "home" | "away" */
 function sideHTML(name, side){
@@ -1043,44 +1093,61 @@ function renderStandings(){
   renderBanner();
 }
 
-/* ---------- Knockout bracket ---------- */
-function roundOrder(stage){           // match numbers of a round, in bracket (top-to-bottom) order
-  const out=[];
+/* ---------- Knockout bracket (two-sided, converging to the Final) ---------- */
+const BROUND_COLOR={R32:"var(--c-blue)",R16:"var(--c-green)",QF:"var(--c-violet)",SF:"var(--gJ)",FINAL:"var(--gold)"};
+const BROUND_TITLE={R32:"Round of 32",R16:"Round of 16",QF:"Quarter",SF:"Semi",FINAL:"Final"};
+
+/* match numbers per stage within the subtree under rootNum, top-to-bottom (DFS, feed1 first) */
+function halfColumns(rootNum, stages){
+  const buckets={}; stages.forEach(s=>buckets[s]=[]);
   (function dfs(n){
     const m=byN[n]; if(!m) return;
-    if(m.stage===stage){ out.push(n); return; }
+    if(buckets[m.stage]) buckets[m.stage].push(n);
     if(m.feed1) dfs(m.feed1);
     if(m.feed2) dfs(m.feed2);
-  })(104);
-  return out;
+  })(rootNum);
+  return buckets;
 }
-function bMatchHTML(m){
+function bMatchHTML(m, mirror){
   const w=winnerSide(m);
   const sc = m.result ? m.result.split("–") : null;
+  const st = statusOf(m);
+  const dateStr = fmt(m.date, zoneFor(m), {month:"short",day:"numeric"});
+  const pill = st==="live" ? `<span class="bm-pill live">Live</span>`
+             : st==="ft"   ? `<span class="bm-pill">FT</span>` : "";
   const side=(team,slot,idx)=>{
     const real=!!RANK[team];
-    const name=real?team:slot;
-    const cls="bteam"+(real?"":" slot")+(w===idx?" win":(w&&w!==idx?" lose":""));
+    const cls="bteam"+(w===idx?" win":(w&&w!==idx?" lose":""));
+    const bar=`<span class="bbar" style="${barStyle(real?team:null)}"></span>`;
+    const main = real
+      ? `<span class="bcode">${code(team)}</span><span class="bfull">${team}</span>`+
+        (originLabel(slot)?`<span class="borigin">${originLabel(slot)}</span>`:"")
+      : `<span class="bcode slot">${originLabel(slot)||slot}</span>`;
     const g = sc ? `<span class="bg">${sc[idx-1]}</span>` : "";
-    return `<div class="${cls}"><span class="bn">${name}</span>${g}</div>`;
+    return `<div class="${cls}">${bar}<span class="binfo">${main}</span>${g}</div>`;
   };
   const pens = m.pens ? `<div class="bpens">pens ${m.pens[0]}–${m.pens[1]}</div>` : "";
-  return `<div class="bmatch">${side(m.t1,m.slot1,1)}${side(m.t2,m.slot2,2)}${pens}</div>`;
+  return `<div class="bmatch${mirror?" mirror":""}">`+
+    `<div class="bm-head"><span class="bm-date">${dateStr}</span><span class="bm-city">${m.city}</span>${pill}</div>`+
+    `${side(m.t1,m.slot1,1)}${side(m.t2,m.slot2,2)}${pens}</div>`;
 }
-function bRoundHTML(stage,title){
-  const cards=roundOrder(stage).map(n=>bMatchHTML(byN[n])).join("");
-  const rc={R32:"var(--c-blue)",R16:"var(--c-green)",QF:"var(--c-violet)",SF:"var(--gJ)",FINAL:"var(--gold)"}[stage]||"var(--accent)";
-  return `<div class="bround${stage==="FINAL"?" bfinal":""}" style="--rc:${rc}"><div class="bround-title">${title}</div><div class="bround-matches">${cards}</div></div>`;
+function bColumnHTML(stage, nums, mirror){
+  const cards=nums.map(n=>bMatchHTML(byN[n],mirror)).join("");
+  return `<div class="bround" style="--rc:${BROUND_COLOR[stage]}"><div class="bround-title">${BROUND_TITLE[stage]}</div><div class="bround-matches">${cards}</div></div>`;
 }
 function renderBracket(){
+  const fin=byN[104];
+  const leftStages=["R32","R16","QF","SF"], rightStages=["SF","QF","R16","R32"];
+  const L=halfColumns(fin.feed1, leftStages), R=halfColumns(fin.feed2, rightStages);
+  const leftHTML  = leftStages.map(s=>bColumnHTML(s, L[s], false)).join("");
+  const rightHTML = rightStages.map(s=>bColumnHTML(s, R[s], true)).join("");
+  const finalCol = `<div class="bround bfinal" style="--rc:${BROUND_COLOR.FINAL}"><div class="bround-title">Final</div><div class="bround-matches">${bMatchHTML(fin)}</div></div>`;
   bracketEl.innerHTML = `
-    <div class="standings-note">Teams fill in automatically as group standings settle and knockout matches are played. Scroll sideways to follow the path to the final.</div>
+    <div class="standings-note">Two-sided knockout bracket — Round of 32 sits on the outer edges and works in to the Final. Teams, dates and scores fill in automatically; the colour bar and origin show where each team came from. Scroll sideways on a wide screen.</div>
     <div class="bracket">
-      ${bRoundHTML("R32","Round of 32")}
-      ${bRoundHTML("R16","Round of 16")}
-      ${bRoundHTML("QF","Quarter-finals")}
-      ${bRoundHTML("SF","Semi-finals")}
-      ${bRoundHTML("FINAL","Final")}
+      <div class="bhalf left">${leftHTML}</div>
+      <div class="bcenter">${finalCol}</div>
+      <div class="bhalf right">${rightHTML}</div>
     </div>
     <div class="bthird"><h3>Third-place play-off</h3>${bMatchHTML(byN[103])}</div>`;
   renderBanner();
