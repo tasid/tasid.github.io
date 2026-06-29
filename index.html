@@ -606,7 +606,7 @@ function sideHTML(name, side){
   if(!real) return `<span class="side ${side}"><span class="placeholder">${name}</span></span>`;
   const fl=flagHTML(name), r=RANK[name];
   const rk = r ? `<span class="rank">#${r}</span>` : "";
-  const nm = `<span class="nm${favs.has(name)?" is-fav":""}" data-team="${name}">${name}</span>`;
+  const nm = `<span class="nm${favs.has(name)?" is-fav":""}" data-team="${name}" title="${name}">${code(name)}</span>`;
   const st = starHTML(name);
   return side==="home"
     ? `<span class="side home">${fl}${nm}${rk}${st}</span>`
@@ -803,6 +803,25 @@ function winnerSide(m){
   return 0;
 }
 
+/* Early client-side propagation: once a knockout match is decided, advance its
+   winner (or loser, for the 3rd-place play-off) into the next round's slot right
+   away, instead of waiting for results.json `teams` to resolve. Runs after the
+   `teams` overrides, in match-number order so feeders fill before their dependants. */
+function propagateWinners(){
+  MATCHES.filter(m=>m.feed1||m.feed2).sort((a,b)=>a.n-b.n).forEach(m=>{
+    const fill=(slot,teamKey,feedKey)=>{
+      if(RANK[m[teamKey]]) return;                 // already a real team (resolved or overridden)
+      const feeder=byN[m[feedKey]]; if(!feeder) return;
+      const ws=winnerSide(feeder); if(!ws) return; // feeder not decided yet
+      const side = /^Winner/.test(m[slot]) ? ws : (ws===1?2:1);   // "Loser N" → other side
+      const team = side===1 ? feeder.t1 : feeder.t2;
+      if(RANK[team]) m[teamKey]=team;              // only assign a resolved team name
+    };
+    fill("slot1","t1","feed1");
+    fill("slot2","t2","feed2");
+  });
+}
+
 /* ---------- US broadcasters (FOX Sports English, Telemundo/NBC Spanish) ----------
    Every match airs on FOX or FS1 (English) and Telemundo or Universo (Spanish);
    streaming is FOX One (Eng) / Peacock (Sp). Default is FOX + Telemundo; the sets
@@ -832,6 +851,7 @@ async function loadResults(){
       const t=teamOverride[m.n] ?? teamOverride[String(m.n)];
       if(t){ if(t.h) m.t1=t.h; if(t.a) m.t2=t.a; }
     });
+    propagateWinners();
   }catch(e){
     console.warn("Could not load results.json — showing schedule only.", e);
     lastUpdated="unavailable";
@@ -1111,10 +1131,8 @@ function halfColumns(rootNum, stages){
 function bMatchHTML(m, mirror){
   const w=winnerSide(m);
   const sc = m.result ? m.result.split("–") : null;
-  const st = statusOf(m);
   const dateStr = fmt(m.date, zoneFor(m), {month:"short",day:"numeric"});
-  const pill = st==="live" ? `<span class="bm-pill live">Live</span>`
-             : st==="ft"   ? `<span class="bm-pill">FT</span>` : "";
+  const pill = statusOf(m)==="ft" ? `<span class="bm-pill">FT</span>` : "";   // no live indicator in the bracket
   const side=(team,slot,idx)=>{
     const real=!!RANK[team];
     const cls="bteam"+(w===idx?" win":(w&&w!==idx?" lose":""));
