@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T18:21:03.593Z",
+  "updated": "2026-06-29T20:20:25.318Z",
   "results": {
     "1": {
       "h": 2,
@@ -363,6 +363,11 @@
     },
     "73": {
       "h": 0,
+      "a": 1,
+      "status": "FT"
+    },
+    "76": {
+      "h": 2,
       "a": 1,
       "status": "FT"
     }
@@ -777,6 +782,12 @@
       "pens": 0
     },
     {
+      "name": "Casemiro",
+      "team": "Brazil",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Connor Metcalfe",
       "team": "Australia",
       "goals": 1,
@@ -833,6 +844,12 @@
     {
       "name": "Franck Kessié",
       "team": "Ivory Coast",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Gabriel Martinelli",
+      "team": "Brazil",
       "goals": 1,
       "pens": 0
     },
@@ -947,6 +964,12 @@
     {
       "name": "Kaan Ayhan",
       "team": "Türkiye",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Kaishu Sano",
+      "team": "Japan",
       "goals": 1,
       "pens": 0
     },
