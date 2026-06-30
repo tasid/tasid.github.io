@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T17:14:18.561Z",
+  "updated": "2026-06-30T19:05:45.923Z",
   "results": {
     "1": {
       "h": 2,
@@ -388,6 +388,11 @@
       "h": 2,
       "a": 1,
       "status": "FT"
+    },
+    "78": {
+      "h": 1,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {
@@ -466,7 +471,7 @@
     {
       "name": "Erling Haaland",
       "team": "Norway",
-      "goals": 4,
+      "goals": 5,
       "pens": 0
     },
     {
@@ -558,6 +563,12 @@
       "team": "DR Congo",
       "goals": 3,
       "pens": 1
+    },
+    {
+      "name": "Amad Diallo",
+      "team": "Ivory Coast",
+      "goals": 2,
+      "pens": 0
     },
     {
       "name": "Anthony Elanga",
@@ -746,12 +757,6 @@
       "pens": 0
     },
     {
-      "name": "Amad Diallo",
-      "team": "Ivory Coast",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Amine Gouiri",
       "team": "Algeria",
       "goals": 1,
@@ -760,6 +765,12 @@
     {
       "name": "Ante Budimir",
       "team": "Croatia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Antonio Nusa",
+      "team": "Norway",
       "goals": 1,
       "pens": 0
     },
