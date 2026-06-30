@@ -340,7 +340,7 @@
   .bracket{display:flex;flex-direction:row;align-items:stretch;gap:5px;overflow-x:auto;padding:6px 2px 10px;-webkit-overflow-scrolling:touch}
   .bhalf{display:flex;flex-direction:row;gap:5px;flex:1 1 auto;min-width:0}
   .bcenter{display:flex;flex:0 0 auto}
-  .bround{display:flex;flex-direction:column;min-width:104px;flex:1 1 0}
+  .bround{display:flex;flex-direction:column;min-width:85px;flex:1 1 0}
   .bcenter .bround{min-width:116px}
   .bround-title{font-size:9px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
     color:var(--paper);background:var(--rc,var(--accent));margin-bottom:6px;text-align:center;
@@ -1138,7 +1138,7 @@ function bMatchHTML(m, mirror){
     const cls="bteam"+(w===idx?" win":(w&&w!==idx?" lose":""));
     const bar=`<span class="bbar" style="${barStyle(real?team:null)}"></span>`;
     const main = real
-      ? `<span class="bcode">${code(team)}</span><span class="bfull">${team}</span>`+
+      ? `<span class="bcode">${code(team)}</span>`+
         (originLabel(slot)?`<span class="borigin">${originLabel(slot)}</span>`:"")
       : `<span class="bcode slot">${originLabel(slot)||slot}</span>`;
     const g = sc ? `<span class="bg">${sc[idx-1]}</span>` : "";
