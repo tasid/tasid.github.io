@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T22:37:49.862Z",
+  "updated": "2026-06-30T23:48:07.607Z",
   "results": {
     "1": {
       "h": 2,
@@ -389,6 +389,11 @@
       "a": 1,
       "status": "FT"
     },
+    "77": {
+      "h": 3,
+      "a": 0,
+      "status": "FT"
+    },
     "78": {
       "h": 1,
       "a": 2,
@@ -463,6 +468,12 @@
   },
   "scorers": [
     {
+      "name": "Kylian Mbappé",
+      "team": "France",
+      "goals": 6,
+      "pens": 0
+    },
+    {
       "name": "Lionel Messi",
       "team": "Argentina",
       "goals": 6,
@@ -472,12 +483,6 @@
       "name": "Erling Haaland",
       "team": "Norway",
       "goals": 5,
-      "pens": 0
-    },
-    {
-      "name": "Kylian Mbappé",
-      "team": "France",
-      "goals": 4,
       "pens": 0
     },
     {
@@ -579,6 +584,12 @@
     {
       "name": "Ayase Ueda",
       "team": "Japan",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Bradley Barcola",
+      "team": "France",
       "goals": 2,
       "pens": 0
     },
@@ -795,12 +806,6 @@
     {
       "name": "Baris Alper Yilmaz",
       "team": "Türkiye",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Bradley Barcola",
-      "team": "France",
       "goals": 1,
       "pens": 0
     },
