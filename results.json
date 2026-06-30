@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T02:30:31.511Z",
+  "updated": "2026-06-30T04:12:20.619Z",
   "results": {
     "1": {
       "h": 2,
@@ -375,6 +375,15 @@
         4
       ]
     },
+    "75": {
+      "h": 1,
+      "a": 1,
+      "status": "FT",
+      "p": [
+        2,
+        3
+      ]
+    },
     "76": {
       "h": 2,
       "a": 1,
@@ -485,6 +494,12 @@
       "pens": 0
     },
     {
+      "name": "Cody Gakpo",
+      "team": "Netherlands",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Deniz Undav",
       "team": "Germany",
       "goals": 3,
@@ -553,12 +568,6 @@
     {
       "name": "Ayase Ueda",
       "team": "Japan",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Cody Gakpo",
-      "team": "Netherlands",
       "goals": 2,
       "pens": 0
     },
@@ -925,6 +934,12 @@
     {
       "name": "Iliman Ndiaye",
       "team": "Senegal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Issa Diop",
+      "team": "Morocco",
       "goals": 1,
       "pens": 0
     },
