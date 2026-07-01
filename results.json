@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T16:01:35.259Z",
+  "updated": "2026-07-01T18:14:56.153Z",
   "results": {
     "1": {
       "h": 2,
@@ -403,6 +403,11 @@
       "h": 2,
       "a": 0,
       "status": "FT"
+    },
+    "80": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -503,6 +508,12 @@
       "pens": 0
     },
     {
+      "name": "Harry Kane",
+      "team": "England",
+      "goals": 5,
+      "pens": 1
+    },
+    {
       "name": "Ousmane Dembélé",
       "team": "France",
       "goals": 4,
@@ -573,12 +584,6 @@
       "team": "Brazil",
       "goals": 3,
       "pens": 0
-    },
-    {
-      "name": "Harry Kane",
-      "team": "England",
-      "goals": 3,
-      "pens": 1
     },
     {
       "name": "Kai Havertz",
@@ -829,6 +834,12 @@
     {
       "name": "Baris Alper Yilmaz",
       "team": "Türkiye",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Brian Cipenga",
+      "team": "DR Congo",
       "goals": 1,
       "pens": 0
     },
