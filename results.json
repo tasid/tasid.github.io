@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T21:56:57.439Z",
+  "updated": "2026-07-01T23:10:09.937Z",
   "results": {
     "1": {
       "h": 2,
@@ -408,6 +408,11 @@
       "h": 2,
       "a": 1,
       "status": "FT"
+    },
+    "82": {
+      "h": 2,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {
@@ -514,6 +519,12 @@
       "pens": 1
     },
     {
+      "name": "Ismaïla Sarr",
+      "team": "Senegal",
+      "goals": 4,
+      "pens": 0
+    },
+    {
       "name": "Ousmane Dembélé",
       "team": "France",
       "goals": 4,
@@ -552,12 +563,6 @@
     {
       "name": "Ismael Saibari",
       "team": "Morocco",
-      "goals": 3,
-      "pens": 0
-    },
-    {
-      "name": "Ismaïla Sarr",
-      "team": "Senegal",
       "goals": 3,
       "pens": 0
     },
@@ -664,6 +669,12 @@
       "pens": 0
     },
     {
+      "name": "Habib Diarra",
+      "team": "Senegal",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Jude Bellingham",
       "team": "England",
       "goals": 2,
@@ -718,6 +729,12 @@
       "pens": 0
     },
     {
+      "name": "Romelu Lukaku",
+      "team": "Belgium",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Rubén Vargas",
       "team": "Switzerland",
       "goals": 2,
@@ -732,6 +749,12 @@
     {
       "name": "Marko Arnautovic",
       "team": "Austria",
+      "goals": 2,
+      "pens": 1
+    },
+    {
+      "name": "Youri Tielemans",
+      "team": "Belgium",
       "goals": 2,
       "pens": 1
     },
@@ -942,12 +965,6 @@
     {
       "name": "Gonzalo Plata",
       "team": "Ecuador",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Habib Diarra",
-      "team": "Senegal",
       "goals": 1,
       "pens": 0
     },
@@ -1302,12 +1319,6 @@
     {
       "name": "Romano Schmid",
       "team": "Austria",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Romelu Lukaku",
-      "team": "Belgium",
       "goals": 1,
       "pens": 0
     },
