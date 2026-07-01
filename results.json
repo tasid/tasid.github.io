@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T06:56:39.875Z",
+  "updated": "2026-07-01T10:39:16.172Z",
   "results": {
     "1": {
       "h": 2,
@@ -398,6 +398,11 @@
       "h": 1,
       "a": 2,
       "status": "FT"
+    },
+    "79": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -464,6 +469,18 @@
     "88": {
       "h": "Australia",
       "a": "Egypt"
+    },
+    "89": {
+      "h": "Paraguay",
+      "a": "France"
+    },
+    "90": {
+      "h": "Canada",
+      "a": "Morocco"
+    },
+    "91": {
+      "h": "Brazil",
+      "a": "Norway"
     }
   },
   "scorers": [
@@ -542,6 +559,12 @@
     {
       "name": "Jonathan David",
       "team": "Canada",
+      "goals": 3,
+      "pens": 0
+    },
+    {
+      "name": "Julián Quiñones",
+      "team": "Mexico",
       "goals": 3,
       "pens": 0
     },
@@ -642,12 +665,6 @@
       "pens": 0
     },
     {
-      "name": "Julián Quiñones",
-      "team": "Mexico",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Leandro Trossard",
       "team": "Belgium",
       "goals": 2,
@@ -680,6 +697,12 @@
     {
       "name": "Ramin Rezaeian",
       "team": "Iran",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Raúl Jiménez",
+      "team": "Mexico",
       "goals": 2,
       "pens": 0
     },
@@ -1262,12 +1285,6 @@
     {
       "name": "Rafik Belghali",
       "team": "Algeria",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Raúl Jiménez",
-      "team": "Mexico",
       "goals": 1,
       "pens": 0
     },
