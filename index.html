@@ -79,7 +79,7 @@
     font-variant-numeric:tabular-nums;
     transition:background-color .25s ease, color .25s ease;
   }
-  .match,.gcard,.bmatch,.tcard,.statbar,.navitem,.nownext,select,input[type=search],.chip{
+  .match,.gcard,.bmatch,.tcard,.statbar,.navitem,select,input[type=search],.chip{
     transition:background-color .25s ease, border-color .25s ease, color .25s ease;
   }
   /* WorldCup vibe + theme switcher */
@@ -304,20 +304,6 @@
   .qkey .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
   .standings-note{font-size:12px;color:var(--faint);margin:2px 2px 16px}
 
-  /* Now / Next banner */
-  .nownext{margin:0 0 14px;border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
-  .nn-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:11px 15px}
-  .nn-row + .nn-row{border-top:1px solid var(--line)}
-  .nn-label{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-  .nn-live{background:var(--live-soft)}
-  .nn-live .nn-label{color:var(--live)}
-  .nn-match{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
-  .nn-score{font-variant-numeric:tabular-nums;background:var(--ink);color:var(--paper);border-radius:6px;padding:1px 7px;margin:0 4px;font-size:13px}
-  .nn-when{font-size:12.5px;color:var(--muted)}
-  .nn-cd{font-variant-numeric:tabular-nums;font-weight:800;color:var(--grass);font-size:14px}
-  .nn-dot{width:7px;height:7px;border-radius:50%;background:var(--live);display:inline-block;animation:pulse 1.4s infinite}
-
   /* Favorite stars */
   .star{background:none;border:none;cursor:pointer;padding:0 1px;font-size:14px;line-height:1;
     color:var(--faint);transition:color .12s,transform .12s}
@@ -481,7 +467,6 @@
       </div>
     </div>
 
-    <div id="nowNext" class="nownext" hidden></div>
     <div class="count" id="count"></div>
 
     <main id="list" aria-live="polite"></main>
@@ -753,7 +738,7 @@ MATCHES.forEach(m=>{ m.feed1=feedNum(m.slot1); m.feed2=feedNum(m.slot2); });
 const $ = id => document.getElementById(id);
 const tzSel=$("tz"), countrySel=$("country"), stageSel=$("stage"), dateSel=$("dateSel"),
       hideFin=$("hideFinished"), favOnly=$("favOnly"), listEl=$("list"), countEl=$("count"),
-      hostChips=$("hostChips"), nowNextEl=$("nowNext");
+      hostChips=$("hostChips");
 
 /* ---------- Favorite teams (persisted in the browser) ---------- */
 let favs;
@@ -763,7 +748,7 @@ function saveFavs(){ try { localStorage.setItem("wc26_favs", JSON.stringify([...
 function toggleFav(name){
   if(favs.has(name)) favs.delete(name); else favs.add(name);
   saveFavs();
-  refresh(); renderBanner();
+  refresh();
 }
 
 /* Populate time-zone select (default = Central, user's region) */
@@ -1000,7 +985,6 @@ function render(scrollToToday){
       window.scrollTo({top: Math.max(0, top), behavior: scrollToToday==="instant" ? "auto" : "smooth"});
     }
   }
-  renderBanner();
 }
 
 /* height of the sticky stat bar, used for scroll offset + day-head/sidebar sticky position */
@@ -1110,7 +1094,6 @@ function renderStandings(){
       <span><span class="sw" style="background:var(--gold)"></span>3rd — may advance (8 best third-place teams)</span>
     </div>
     ${renderThirds()}`;
-  renderBanner();
 }
 
 /* ---------- Knockout bracket (two-sided, converging to the Final) ---------- */
@@ -1168,14 +1151,13 @@ function renderBracket(){
       <div class="bhalf right">${rightHTML}</div>
     </div>
     <div class="bthird"><h3>Third-place play-off</h3>${bMatchHTML(byN[103])}</div>`;
-  renderBanner();
 }
 
 /* ---------- Top scorers (Golden Boot) ---------- */
 function renderScorers(){
   if(!SCORERS.length){
     scorersEl.innerHTML = `<div class="empty"><b>No scorers yet.</b>Goals appear here once matches are played and the scores file refreshes.</div>`;
-    renderBanner(); return;
+    return;
   }
   let rows="", rank=0, prev=null;
   SCORERS.forEach((s,i)=>{
@@ -1192,7 +1174,6 @@ function renderScorers(){
       <thead><tr><th class="pos">#</th><th class="tc">Player</th><th class="tc tmcol">Team</th><th class="pts">Goals</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>`;
-  renderBanner();
 }
 
 /* ---------- View switching ---------- */
@@ -1236,50 +1217,6 @@ function refresh(){
   else if(currentView==="standings") renderStandings();
   else if(currentView==="bracket") renderBracket();
   else renderScorers();
-}
-
-/* ---------- Now / Next banner ---------- */
-function fmtCountdown(ms){
-  if(ms<=0) return "now";
-  const s=Math.floor(ms/1000);
-  const d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60;
-  if(d>0) return `${d}d ${h}h ${m}m`;
-  if(h>0) return `${h}h ${m}m ${sec}s`;
-  return `${m}m ${sec}s`;
-}
-function renderBanner(){
-  if(currentView!=="schedule"){ nowNextEl.hidden=true; return; }
-  const now=Date.now();
-  const live = MATCHES.filter(m=>statusOf(m)==="live");
-  const next = MATCHES.find(m=>m.date.getTime()>now);   // MATCHES is sorted ascending
-  if(!live.length && !next){ nowNextEl.hidden=true; return; }
-
-  let html="";
-  if(live.length){
-    const items = live.map(m=>{
-      if(m.result){ const [a,b]=m.result.split("–"); return `${m.t1} <span class="nn-score">${a}–${b}</span> ${m.t2}`; }
-      return `${m.t1} <span class="vs">v</span> ${m.t2}`;
-    }).join(' &nbsp;·&nbsp; ');
-    html += `<div class="nn-row nn-live"><span class="nn-label"><span class="nn-dot"></span> Live now</span><span class="nn-match">${items}</span></div>`;
-  }
-  if(next){
-    const z=zoneFor(next);
-    const when=fmt(next.date,z,{weekday:"short",hour:"numeric",minute:"2-digit",timeZoneName:"short"});
-    const stage = next.stage==="GROUP" ? "Group "+next.group : STAGE_NAME[next.stage];
-    html += `<div class="nn-row"><span class="nn-label">Next · ${stage}</span>`+
-            `<span class="nn-match">${next.t1} <span class="vs">v</span> ${next.t2}</span>`+
-            `<span class="nn-when">${when} · ${broadcast(next.n).en}/${broadcast(next.n).es}</span>`+
-            `<span class="nn-cd" id="nnCd" data-ts="${next.date.getTime()}">in ${fmtCountdown(next.date.getTime()-now)}</span></div>`;
-  }
-  nowNextEl.innerHTML=html;
-  nowNextEl.hidden=false;
-}
-function tickBanner(){
-  const cd=document.getElementById("nnCd");
-  if(!cd) return;
-  const rem=(+cd.dataset.ts)-Date.now();
-  if(rem<=0){ renderBanner(); return; }   // kickoff reached -> reclassify live/next
-  cd.textContent="in "+fmtCountdown(rem);
 }
 
 /* ---------- Events ---------- */
@@ -1357,7 +1294,7 @@ updateHead();                      // set the view title + subtitle
 render("instant");                 // paint the schedule immediately (jumps to today)
 setTimeout(setDayTop,0);
 
-// once results.json arrives (or fails), the Now/Next banner + scores change the layout,
+// once results.json arrives (or fails), the scores change the layout,
 // so re-jump to today to land on it accurately
 loadResults().then(()=>{
   if(currentView==="schedule") render("instant");
@@ -1366,9 +1303,6 @@ loadResults().then(()=>{
 
 /* every minute: re-fetch scores + refresh statuses/standings (no scroll) */
 setInterval(()=>loadResults().then(refresh), 60000);
-
-/* tick the Now/Next countdown every second */
-setInterval(tickBanner, 1000);
 </script>
 </body>
 </html>
