@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T19:58:21.508Z",
+  "updated": "2026-07-02T21:06:24.344Z",
   "results": {
     "1": {
       "h": 2,
@@ -418,6 +418,11 @@
       "h": 2,
       "a": 2,
       "status": "FT"
+    },
+    "84": {
+      "h": 3,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -534,6 +539,12 @@
     {
       "name": "Ismaïla Sarr",
       "team": "Senegal",
+      "goals": 4,
+      "pens": 0
+    },
+    {
+      "name": "Mikel Oyarzabal",
+      "team": "Spain",
       "goals": 4,
       "pens": 0
     },
@@ -702,12 +713,6 @@
     {
       "name": "Maxi Araújo",
       "team": "Uruguay",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "team": "Spain",
       "goals": 2,
       "pens": 0
     },
@@ -1302,6 +1307,12 @@
     {
       "name": "Omar Rekik",
       "team": "Tunisia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Pedro Porro",
+      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
