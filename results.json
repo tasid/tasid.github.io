@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T00:19:58.036Z",
+  "updated": "2026-07-02T03:41:07.123Z",
   "results": {
     "1": {
       "h": 2,
@@ -409,6 +409,11 @@
       "a": 1,
       "status": "FT"
     },
+    "81": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
+    },
     "82": {
       "h": 2,
       "a": 2,
@@ -561,6 +566,12 @@
       "pens": 0
     },
     {
+      "name": "Folarin Balogun",
+      "team": "USA",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Ismael Saibari",
       "team": "Morocco",
       "goals": 3,
@@ -659,12 +670,6 @@
     {
       "name": "Ermin Mahmic",
       "team": "Bosnia & Herzegovina",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Folarin Balogun",
-      "team": "USA",
       "goals": 2,
       "pens": 0
     },
@@ -1139,6 +1144,12 @@
     {
       "name": "Mahmoud Saber",
       "team": "Egypt",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Malik Tillman",
+      "team": "USA",
       "goals": 1,
       "pens": 0
     },
