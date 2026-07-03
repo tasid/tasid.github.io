@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T04:04:31.800Z",
+  "updated": "2026-07-03T05:07:43.067Z",
   "results": {
     "1": {
       "h": 2,
@@ -428,6 +428,11 @@
       "h": 3,
       "a": 0,
       "status": "FT"
+    },
+    "85": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -770,6 +775,12 @@
       "pens": 0
     },
     {
+      "name": "Breel Embolo",
+      "team": "Switzerland",
+      "goals": 2,
+      "pens": 1
+    },
+    {
       "name": "Marko Arnautovic",
       "team": "Austria",
       "goals": 2,
@@ -910,6 +921,12 @@
     {
       "name": "Daizen Maeda",
       "team": "Japan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Dan Ndoye",
+      "team": "Switzerland",
       "goals": 1,
       "pens": 0
     },
@@ -1428,12 +1445,6 @@
       "team": "Haiti",
       "goals": 1,
       "pens": 0
-    },
-    {
-      "name": "Breel Embolo",
-      "team": "Switzerland",
-      "goals": 1,
-      "pens": 1
     },
     {
       "name": "Granit Xhaka",
