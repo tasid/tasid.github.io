@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T23:33:48.636Z",
+  "updated": "2026-07-03T01:15:15.748Z",
   "results": {
     "1": {
       "h": 2,
@@ -419,6 +419,11 @@
       "a": 2,
       "status": "FT"
     },
+    "83": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
+    },
     "84": {
       "h": 3,
       "a": 0,
@@ -621,6 +626,12 @@
       "pens": 0
     },
     {
+      "name": "Cristiano Ronaldo",
+      "team": "Portugal",
+      "goals": 3,
+      "pens": 1
+    },
+    {
       "name": "Kai Havertz",
       "team": "Germany",
       "goals": 3,
@@ -653,12 +664,6 @@
     {
       "name": "Bradley Barcola",
       "team": "France",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Cristiano Ronaldo",
-      "team": "Portugal",
       "goals": 2,
       "pens": 0
     },
@@ -981,6 +986,12 @@
       "pens": 0
     },
     {
+      "name": "Gonçalo Ramos",
+      "team": "Portugal",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Gonzalo Plata",
       "team": "Ecuador",
       "goals": 1,
@@ -1025,6 +1036,12 @@
     {
       "name": "Issa Diop",
       "team": "Morocco",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ivan Perisic",
+      "team": "Croatia",
       "goals": 1,
       "pens": 0
     },
