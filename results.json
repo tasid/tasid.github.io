@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T20:53:04.682Z",
+  "updated": "2026-07-03T21:57:17.067Z",
   "results": {
     "1": {
       "h": 2,
@@ -433,6 +433,15 @@
       "h": 2,
       "a": 0,
       "status": "FT"
+    },
+    "88": {
+      "h": 1,
+      "a": 1,
+      "status": "FT",
+      "p": [
+        2,
+        4
+      ]
     }
   },
   "teams": {
@@ -701,6 +710,12 @@
       "pens": 0
     },
     {
+      "name": "Emam Ashour",
+      "team": "Egypt",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Ermin Mahmic",
       "team": "Bosnia & Herzegovina",
       "goals": 2,
@@ -949,12 +964,6 @@
     {
       "name": "Eldor Shomurodov",
       "team": "Uzbekistan",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Emam Ashour",
-      "team": "Egypt",
       "goals": 1,
       "pens": 0
     },
