@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T22:38:01.475Z",
+  "updated": "2026-07-04T23:41:34.126Z",
   "results": {
     "1": {
       "h": 2,
@@ -453,6 +453,11 @@
         4
       ]
     },
+    "89": {
+      "h": 0,
+      "a": 1,
+      "status": "FT"
+    },
     "90": {
       "h": 0,
       "a": 3,
@@ -567,8 +572,8 @@
     {
       "name": "Kylian Mbappé",
       "team": "France",
-      "goals": 6,
-      "pens": 0
+      "goals": 7,
+      "pens": 1
     },
     {
       "name": "Erling Haaland",
