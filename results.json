@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T18:39:50.850Z",
+  "updated": "2026-07-04T19:51:49.085Z",
   "results": {
     "1": {
       "h": 2,
@@ -452,6 +452,11 @@
         2,
         4
       ]
+    },
+    "90": {
+      "h": 0,
+      "a": 3,
+      "status": "FT"
     }
   },
   "teams": {
@@ -698,6 +703,12 @@
       "pens": 0
     },
     {
+      "name": "Azzedine Ounahi",
+      "team": "Morocco",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Bradley Barcola",
       "team": "France",
       "goals": 2,
@@ -802,6 +813,12 @@
     {
       "name": "Rubén Vargas",
       "team": "Switzerland",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Soufiane Rahimi",
+      "team": "Morocco",
       "goals": 2,
       "pens": 0
     },
@@ -1450,12 +1467,6 @@
     {
       "name": "Sidny Lopes Cabral",
       "team": "Cape Verde",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Soufiane Rahimi",
-      "team": "Morocco",
       "goals": 1,
       "pens": 0
     },
