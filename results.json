@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T11:00:36.945Z",
+  "updated": "2026-07-04T12:16:11.061Z",
   "results": {
     "1": {
       "h": 2,
@@ -542,6 +542,14 @@
     "94": {
       "h": "USA",
       "a": "Belgium"
+    },
+    "95": {
+      "h": "Argentina",
+      "a": "Egypt"
+    },
+    "96": {
+      "h": "Switzerland",
+      "a": "Colombia"
     }
   },
   "scorers": [
