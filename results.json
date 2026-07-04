@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T00:05:28.226Z",
+  "updated": "2026-07-04T03:58:47.426Z",
   "results": {
     "1": {
       "h": 2,
@@ -434,6 +434,16 @@
       "a": 0,
       "status": "FT"
     },
+    "86": {
+      "h": 1,
+      "a": 1,
+      "status": "FT"
+    },
+    "87": {
+      "h": 1,
+      "a": 0,
+      "status": "FT"
+    },
     "88": {
       "h": 1,
       "a": 1,
@@ -536,14 +546,14 @@
   },
   "scorers": [
     {
-      "name": "Kylian Mbappé",
-      "team": "France",
-      "goals": 6,
+      "name": "Lionel Messi",
+      "team": "Argentina",
+      "goals": 7,
       "pens": 0
     },
     {
-      "name": "Lionel Messi",
-      "team": "Argentina",
+      "name": "Kylian Mbappé",
+      "team": "France",
       "goals": 6,
       "pens": 0
     },
@@ -950,6 +960,12 @@
       "pens": 0
     },
     {
+      "name": "Deroy Duarte",
+      "team": "Cape Verde",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Derrick Luckassen",
       "team": "Ghana",
       "goals": 1,
@@ -1094,6 +1110,12 @@
       "pens": 0
     },
     {
+      "name": "Jhon Arias",
+      "team": "Colombia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "João Neves",
       "team": "Portugal",
       "goals": 1,
@@ -1180,6 +1202,12 @@
     {
       "name": "Leroy Sané",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Lisandro Martínez",
+      "team": "Argentina",
       "goals": 1,
       "pens": 0
     },
@@ -1408,6 +1436,12 @@
     {
       "name": "Sebastian Berhalter",
       "team": "USA",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Sidny Lopes Cabral",
+      "team": "Cape Verde",
       "goals": 1,
       "pens": 0
     },
