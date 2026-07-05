@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T21:17:49.317Z",
+  "updated": "2026-07-05T22:28:14.874Z",
   "results": {
     "1": {
       "h": 2,
@@ -462,6 +462,11 @@
       "h": 0,
       "a": 3,
       "status": "FT"
+    },
+    "91": {
+      "h": 1,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {
@@ -568,6 +573,12 @@
   },
   "scorers": [
     {
+      "name": "Erling Haaland",
+      "team": "Norway",
+      "goals": 7,
+      "pens": 0
+    },
+    {
       "name": "Lionel Messi",
       "team": "Argentina",
       "goals": 7,
@@ -578,12 +589,6 @@
       "team": "France",
       "goals": 7,
       "pens": 1
-    },
-    {
-      "name": "Erling Haaland",
-      "team": "Norway",
-      "goals": 5,
-      "pens": 0
     },
     {
       "name": "Harry Kane",
@@ -1530,6 +1535,12 @@
     {
       "name": "Lautaro Martínez",
       "team": "Argentina",
+      "goals": 1,
+      "pens": 1
+    },
+    {
+      "name": "Neymar",
+      "team": "Brazil",
       "goals": 1,
       "pens": 1
     },
