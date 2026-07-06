@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T01:21:12.126Z",
+  "updated": "2026-07-06T03:40:53.670Z",
   "results": {
     "1": {
       "h": 2,
@@ -467,6 +467,11 @@
       "h": 1,
       "a": 2,
       "status": "FT"
+    },
+    "92": {
+      "h": 2,
+      "a": 3,
+      "status": "FT"
     }
   },
   "teams": {
@@ -593,12 +598,24 @@
     {
       "name": "Harry Kane",
       "team": "England",
-      "goals": 5,
-      "pens": 1
+      "goals": 6,
+      "pens": 2
     },
     {
       "name": "Ismaïla Sarr",
       "team": "Senegal",
+      "goals": 4,
+      "pens": 0
+    },
+    {
+      "name": "Jude Bellingham",
+      "team": "England",
+      "goals": 4,
+      "pens": 0
+    },
+    {
+      "name": "Julián Quiñones",
+      "team": "Mexico",
       "goals": 4,
       "pens": 0
     },
@@ -669,12 +686,6 @@
       "pens": 0
     },
     {
-      "name": "Julián Quiñones",
-      "team": "Mexico",
-      "goals": 3,
-      "pens": 0
-    },
-    {
       "name": "Matheus Cunha",
       "team": "Brazil",
       "goals": 3,
@@ -689,6 +700,12 @@
     {
       "name": "Kai Havertz",
       "team": "Germany",
+      "goals": 3,
+      "pens": 1
+    },
+    {
+      "name": "Raúl Jiménez",
+      "team": "Mexico",
       "goals": 3,
       "pens": 1
     },
@@ -771,12 +788,6 @@
       "pens": 0
     },
     {
-      "name": "Jude Bellingham",
-      "team": "England",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Leandro Trossard",
       "team": "Belgium",
       "goals": 2,
@@ -803,12 +814,6 @@
     {
       "name": "Ramin Rezaeian",
       "team": "Iran",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Raúl Jiménez",
-      "team": "Mexico",
       "goals": 2,
       "pens": 0
     },
