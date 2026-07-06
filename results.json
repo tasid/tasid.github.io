@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T20:32:57.681Z",
+  "updated": "2026-07-06T22:01:54.554Z",
   "results": {
     "1": {
       "h": 2,
@@ -471,6 +471,11 @@
     "92": {
       "h": 2,
       "a": 3,
+      "status": "FT"
+    },
+    "93": {
+      "h": 0,
+      "a": 1,
       "status": "FT"
     }
   },
@@ -1340,6 +1345,12 @@
     {
       "name": "Michal Sadílek",
       "team": "Czechia",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Mikel Merino",
+      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
