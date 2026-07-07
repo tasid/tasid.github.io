@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T16:09:55.918Z",
+  "updated": "2026-07-07T18:17:24.265Z",
   "results": {
     "1": {
       "h": 2,
@@ -482,6 +482,11 @@
       "h": 1,
       "a": 4,
       "status": "FT"
+    },
+    "95": {
+      "h": 3,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {
@@ -596,14 +601,14 @@
   },
   "scorers": [
     {
-      "name": "Erling Haaland",
-      "team": "Norway",
-      "goals": 7,
+      "name": "Lionel Messi",
+      "team": "Argentina",
+      "goals": 8,
       "pens": 0
     },
     {
-      "name": "Lionel Messi",
-      "team": "Argentina",
+      "name": "Erling Haaland",
+      "team": "Norway",
       "goals": 7,
       "pens": 0
     },
@@ -836,6 +841,12 @@
       "pens": 0
     },
     {
+      "name": "Mostafa Zico",
+      "team": "Egypt",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Nicolas Pépé",
       "team": "Ivory Coast",
       "goals": 2,
@@ -1022,6 +1033,12 @@
       "pens": 0
     },
     {
+      "name": "Cristian Romero",
+      "team": "Argentina",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Daizen Maeda",
       "team": "Japan",
       "goals": 1,
@@ -1054,6 +1071,12 @@
     {
       "name": "Eldor Shomurodov",
       "team": "Uzbekistan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Enzo Fernández",
+      "team": "Argentina",
       "goals": 1,
       "pens": 0
     },
@@ -1388,12 +1411,6 @@
       "pens": 0
     },
     {
-      "name": "Mostafa Zico",
-      "team": "Egypt",
-      "goals": 1,
-      "pens": 0
-    },
-    {
       "name": "Mousa Al-Tamari",
       "team": "Jordan",
       "goals": 1,
@@ -1564,6 +1581,12 @@
     {
       "name": "Wilson Isidor",
       "team": "Haiti",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Yasser Ibrahim",
+      "team": "Egypt",
       "goals": 1,
       "pens": 0
     },
