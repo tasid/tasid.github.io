@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:13:26.959Z",
+  "updated": "2026-07-07T02:34:27.465Z",
   "results": {
     "1": {
       "h": 2,
@@ -477,6 +477,11 @@
       "h": 0,
       "a": 1,
       "status": "FT"
+    },
+    "94": {
+      "h": 1,
+      "a": 4,
+      "status": "FT"
     }
   },
   "teams": {
@@ -701,6 +706,12 @@
       "pens": 0
     },
     {
+      "name": "Romelu Lukaku",
+      "team": "Belgium",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Cristiano Ronaldo",
       "team": "Portugal",
       "goals": 3,
@@ -755,6 +766,12 @@
       "pens": 0
     },
     {
+      "name": "Charles De Ketelaere",
+      "team": "Belgium",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Crysencio Summerville",
       "team": "Netherlands",
       "goals": 2,
@@ -803,6 +820,12 @@
       "pens": 0
     },
     {
+      "name": "Malik Tillman",
+      "team": "USA",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Maxi Araújo",
       "team": "Uruguay",
       "goals": 2,
@@ -829,12 +852,6 @@
     {
       "name": "Riyad Mahrez",
       "team": "Algeria",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Romelu Lukaku",
-      "team": "Belgium",
       "goals": 2,
       "pens": 0
     },
@@ -1097,6 +1114,12 @@
       "pens": 0
     },
     {
+      "name": "Hans Vanaken",
+      "team": "Belgium",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Hassan Al-Haydos",
       "team": "Qatar",
       "goals": 1,
@@ -1285,12 +1308,6 @@
     {
       "name": "Mahmoud Saber",
       "team": "Egypt",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Malik Tillman",
-      "team": "USA",
       "goals": 1,
       "pens": 0
     },
