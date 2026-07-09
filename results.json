@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T20:47:05.984Z",
+  "updated": "2026-07-09T22:13:46.663Z",
   "results": {
     "1": {
       "h": 2,
@@ -496,6 +496,11 @@
         4,
         3
       ]
+    },
+    "97": {
+      "h": 2,
+      "a": 0,
+      "status": "FT"
     }
   },
   "teams": {
@@ -620,22 +625,28 @@
       "pens": 0
     },
     {
+      "name": "Kylian Mbappé",
+      "team": "France",
+      "goals": 8,
+      "pens": 1
+    },
+    {
       "name": "Erling Haaland",
       "team": "Norway",
       "goals": 7,
       "pens": 0
     },
     {
-      "name": "Kylian Mbappé",
-      "team": "France",
-      "goals": 7,
-      "pens": 1
-    },
-    {
       "name": "Harry Kane",
       "team": "England",
       "goals": 6,
       "pens": 2
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "France",
+      "goals": 5,
+      "pens": 0
     },
     {
       "name": "Ismaïla Sarr",
@@ -658,12 +669,6 @@
     {
       "name": "Mikel Oyarzabal",
       "team": "Spain",
-      "goals": 4,
-      "pens": 0
-    },
-    {
-      "name": "Ousmane Dembélé",
-      "team": "France",
       "goals": 4,
       "pens": 0
     },
