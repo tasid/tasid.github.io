@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T20:51:41.687Z",
+  "updated": "2026-07-10T21:16:22.919Z",
   "results": {
     "1": {
       "h": 2,
@@ -501,6 +501,11 @@
       "h": 2,
       "a": 0,
       "status": "FT"
+    },
+    "98": {
+      "h": 2,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -685,6 +690,12 @@
       "pens": 0
     },
     {
+      "name": "Charles De Ketelaere",
+      "team": "Belgium",
+      "goals": 3,
+      "pens": 0
+    },
+    {
       "name": "Cody Gakpo",
       "team": "Netherlands",
       "goals": 3,
@@ -793,12 +804,6 @@
       "pens": 0
     },
     {
-      "name": "Charles De Ketelaere",
-      "team": "Belgium",
-      "goals": 2,
-      "pens": 0
-    },
-    {
       "name": "Crysencio Summerville",
       "team": "Netherlands",
       "goals": 2,
@@ -855,6 +860,12 @@
     {
       "name": "Maxi Araújo",
       "team": "Uruguay",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Mikel Merino",
+      "team": "Spain",
       "goals": 2,
       "pens": 0
     },
@@ -1095,6 +1106,12 @@
     {
       "name": "Enzo Fernández",
       "team": "Argentina",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Fabián Ruiz",
+      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
@@ -1407,12 +1424,6 @@
     {
       "name": "Michal Sadílek",
       "team": "Czechia",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Mikel Merino",
-      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
