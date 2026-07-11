@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T13:51:10.199Z",
+  "updated": "2026-07-11T14:44:06.818Z",
   "results": {
     "1": {
       "h": 2,
@@ -620,6 +620,10 @@
     "100": {
       "h": "Argentina",
       "a": "Switzerland"
+    },
+    "101": {
+      "h": "France",
+      "a": "Spain"
     }
   },
   "scorers": [
