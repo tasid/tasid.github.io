@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T23:27:52.364Z",
+  "updated": "2026-07-12T01:03:41.881Z",
   "results": {
     "1": {
       "h": 2,
@@ -506,6 +506,11 @@
       "h": 2,
       "a": 1,
       "status": "FT"
+    },
+    "99": {
+      "h": 1,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -646,6 +651,12 @@
       "pens": 0
     },
     {
+      "name": "Jude Bellingham",
+      "team": "England",
+      "goals": 6,
+      "pens": 0
+    },
+    {
       "name": "Harry Kane",
       "team": "England",
       "goals": 6,
@@ -660,12 +671,6 @@
     {
       "name": "Ismaïla Sarr",
       "team": "Senegal",
-      "goals": 4,
-      "pens": 0
-    },
-    {
-      "name": "Jude Bellingham",
-      "team": "England",
       "goals": 4,
       "pens": 0
     },
@@ -1002,6 +1007,12 @@
     {
       "name": "Amine Gouiri",
       "team": "Algeria",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Andreas Schjelderup",
+      "team": "Norway",
       "goals": 1,
       "pens": 0
     },
