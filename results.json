@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T01:03:41.881Z",
+  "updated": "2026-07-12T04:35:56.697Z",
   "results": {
     "1": {
       "h": 2,
@@ -511,6 +511,11 @@
       "h": 1,
       "a": 1,
       "status": "FT"
+    },
+    "100": {
+      "h": 1,
+      "a": 1,
+      "status": "FT"
     }
   },
   "teams": {
@@ -831,6 +836,12 @@
       "pens": 0
     },
     {
+      "name": "Dan Ndoye",
+      "team": "Switzerland",
+      "goals": 2,
+      "pens": 0
+    },
+    {
       "name": "Daniel Muñoz",
       "team": "Colombia",
       "goals": 2,
@@ -933,6 +944,12 @@
       "pens": 1
     },
     {
+      "name": "Lautaro Martínez",
+      "team": "Argentina",
+      "goals": 2,
+      "pens": 1
+    },
+    {
       "name": "Marko Arnautovic",
       "team": "Austria",
       "goals": 2,
@@ -983,6 +1000,12 @@
     {
       "name": "Alexander Isak",
       "team": "Sweden",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Alexis Mac Allister",
+      "team": "Argentina",
       "goals": 1,
       "pens": 0
     },
@@ -1085,12 +1108,6 @@
     {
       "name": "Daizen Maeda",
       "team": "Japan",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Dan Ndoye",
-      "team": "Switzerland",
       "goals": 1,
       "pens": 0
     },
@@ -1283,6 +1300,12 @@
     {
       "name": "Jovo Lukić",
       "team": "Bosnia & Herzegovina",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Julián Álvarez",
+      "team": "Argentina",
       "goals": 1,
       "pens": 0
     },
@@ -1637,12 +1660,6 @@
     {
       "name": "Granit Xhaka",
       "team": "Switzerland",
-      "goals": 1,
-      "pens": 1
-    },
-    {
-      "name": "Lautaro Martínez",
-      "team": "Argentina",
       "goals": 1,
       "pens": 1
     },
