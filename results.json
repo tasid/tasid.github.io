@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T20:03:22.124Z",
+  "updated": "2026-07-15T21:13:14.129Z",
   "results": {
     "1": {
       "h": 2,
@@ -521,6 +521,11 @@
       "h": 0,
       "a": 2,
       "status": "FT"
+    },
+    "102": {
+      "h": 1,
+      "a": 2,
+      "status": "FT"
     }
   },
   "teams": {
@@ -642,6 +647,14 @@
     },
     "102": {
       "h": "England",
+      "a": "Argentina"
+    },
+    "103": {
+      "h": "France",
+      "a": "England"
+    },
+    "104": {
+      "h": "Spain",
       "a": "Argentina"
     }
   },
@@ -785,6 +798,12 @@
       "pens": 1
     },
     {
+      "name": "Lautaro Martínez",
+      "team": "Argentina",
+      "goals": 3,
+      "pens": 1
+    },
+    {
       "name": "Raúl Jiménez",
       "team": "Mexico",
       "goals": 3,
@@ -859,6 +878,12 @@
     {
       "name": "Emam Ashour",
       "team": "Egypt",
+      "goals": 2,
+      "pens": 0
+    },
+    {
+      "name": "Enzo Fernández",
+      "team": "Argentina",
       "goals": 2,
       "pens": 0
     },
@@ -959,12 +984,6 @@
       "pens": 1
     },
     {
-      "name": "Lautaro Martínez",
-      "team": "Argentina",
-      "goals": 2,
-      "pens": 1
-    },
-    {
       "name": "Marko Arnautovic",
       "team": "Austria",
       "goals": 2,
@@ -1061,6 +1080,12 @@
       "pens": 0
     },
     {
+      "name": "Anthony Gordon",
+      "team": "England",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Antonio Nusa",
       "team": "Norway",
       "goals": 1,
@@ -1147,12 +1172,6 @@
     {
       "name": "Eldor Shomurodov",
       "team": "Uzbekistan",
-      "goals": 1,
-      "pens": 0
-    },
-    {
-      "name": "Enzo Fernández",
-      "team": "Argentina",
       "goals": 1,
       "pens": 0
     },
