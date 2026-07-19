@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T23:06:59.466Z",
+  "updated": "2026-07-19T00:06:50.178Z",
   "results": {
     "1": {
       "h": 2,
@@ -526,6 +526,11 @@
       "h": 1,
       "a": 2,
       "status": "FT"
+    },
+    "103": {
+      "h": 4,
+      "a": 6,
+      "status": "FT"
     }
   },
   "teams": {
@@ -660,16 +665,16 @@
   },
   "scorers": [
     {
+      "name": "Kylian Mbappé",
+      "team": "France",
+      "goals": 10,
+      "pens": 1
+    },
+    {
       "name": "Lionel Messi",
       "team": "Argentina",
       "goals": 8,
       "pens": 0
-    },
-    {
-      "name": "Kylian Mbappé",
-      "team": "France",
-      "goals": 8,
-      "pens": 1
     },
     {
       "name": "Erling Haaland",
@@ -680,6 +685,12 @@
     {
       "name": "Jude Bellingham",
       "team": "England",
+      "goals": 7,
+      "pens": 0
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "France",
       "goals": 6,
       "pens": 0
     },
@@ -688,12 +699,6 @@
       "team": "England",
       "goals": 6,
       "pens": 2
-    },
-    {
-      "name": "Ousmane Dembélé",
-      "team": "France",
-      "goals": 5,
-      "pens": 0
     },
     {
       "name": "Mikel Oyarzabal",
@@ -717,6 +722,12 @@
       "name": "Vinícius Júnior",
       "team": "Brazil",
       "goals": 4,
+      "pens": 0
+    },
+    {
+      "name": "Bradley Barcola",
+      "team": "France",
+      "goals": 3,
       "pens": 0
     },
     {
@@ -786,6 +797,12 @@
       "pens": 0
     },
     {
+      "name": "Bukayo Saka",
+      "team": "England",
+      "goals": 3,
+      "pens": 1
+    },
+    {
       "name": "Cristiano Ronaldo",
       "team": "Portugal",
       "goals": 3,
@@ -836,12 +853,6 @@
     {
       "name": "Azzedine Ounahi",
       "team": "Morocco",
-      "goals": 2,
-      "pens": 0
-    },
-    {
-      "name": "Bradley Barcola",
-      "team": "France",
       "goals": 2,
       "pens": 0
     },
@@ -1152,6 +1163,12 @@
       "pens": 0
     },
     {
+      "name": "Declan Rice",
+      "team": "England",
+      "goals": 1,
+      "pens": 0
+    },
+    {
       "name": "Deroy Duarte",
       "team": "Cape Verde",
       "goals": 1,
@@ -1172,6 +1189,12 @@
     {
       "name": "Eldor Shomurodov",
       "team": "Uzbekistan",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ezri Konsa",
+      "team": "England",
       "goals": 1,
       "pens": 0
     },
