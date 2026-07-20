@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T10:41:45.653Z",
+  "updated": "2026-07-20T12:54:43.986Z",
   "results": {
     "1": {
       "h": 2,
@@ -530,6 +530,11 @@
     "103": {
       "h": 4,
       "a": 6,
+      "status": "FT"
+    },
+    "104": {
+      "h": 0,
+      "a": 0,
       "status": "FT"
     }
   },
@@ -1207,6 +1212,12 @@
     {
       "name": "Felix Nmecha",
       "team": "Germany",
+      "goals": 1,
+      "pens": 0
+    },
+    {
+      "name": "Ferran Torres",
+      "team": "Spain",
       "goals": 1,
       "pens": 0
     },
